@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas as poesias</title>
+</head>
+<body>
+    <h1>aqui ficarão todas as poesias!</h1>
+    <a href="/add"><h2>Add Poetry</h2></a>
+
+    <%for(let i= 0; i < poetry.length; i++){%>
+        <div id="<%=poetry[i]._id%>">
+            <form method="POST" action="/all/<%=poetry[i]._id%>?_method=DELETE" >
+                <h2><%=poetry[i].title%></h2>
+                <div><%=poetry[i].text%></div>
+                <div><%=poetry[i].author%></div>
+                <div><%=poetry[i].url%></div>
+                <div>Click:<%=poetry[i].click%></div>
+                <div>
+                    <input name="id" value="<%=poetry[i]._id%>">
+                    <button type="submit" >Delete</button>
+                    <a href="/edit/<%=poetry[i]._id%>">Edit</a>
+                </div>
+            </form>
+        </div>
+    <%}%>
+   
+</body>
+</html>
