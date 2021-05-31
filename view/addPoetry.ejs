@@ -13,14 +13,27 @@
    .bg-purple{ background-color:#6d5c81} 
 </style>
 <body class="bg-dark"> 
-    <div class="container w-50 mt-5 p-4 text-center rounded text-white">
-        <h1 class="pt-3">Add Poetry</h1>
-        <form action="/add" method="POST" class="d-flex flex-column p-4 ">
+    <div class="container w-50 mt-5 pt-5 text-center rounded text-white">
+        <h1>Add Poetry</h1>
+        <form action="/addPoetry" method="POST" class="d-flex flex-column ">
             <input class="mb-3 p-2 rounded" name="title" value="<%=body.title%>" placeholder="Title">
-            <input class="mb-3 p-2 rounded" name="text" value="<%=body.text%>" placeholder="Text">
+            <textarea class="mb-3 p-2 rounded" name="text" value="<%=body.text%> " rows="1" placeholder="Text"></textarea>
             <input class="mb-3 p-2 rounded" name="author" value="<%=body.author%>" placeholder="Author">
             <input class="mb-3 p-2 rounded" name="url" value="<%=body.url%>" placeholder="Url">
-            <button class="mt-3 p-2 bg-purple text-white rounded">Add</button>
+            <div>
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+            </div>
+            <button class="btn mt-3 mb-4 p-2 bg-purple text-white rounded">Add</button>
+        
         </form>
     </div> 
 </body>

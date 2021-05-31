@@ -11,27 +11,25 @@
 </head>
 <style>
     .bg-purple{background-color:#6d5c81};
-    
  </style>
 <body class="bg-dark">
-    <div class="container w-75 mt-5 p-4">
-        <h1 class="pt-3 pb-1 text-white">All Poetries!</h1>
-        <a href="/add" class="text-muted"><h4>Add Poetry</h4></a>
-
+    <div class="container w-75 p-5 mt-4">
+        <a href="/addPoetry" class="text-muted"><h4>Add Poetry</h4></a>
         <%for(let i= 0; i < poetry.length; i++){%>
             <div id="<%=poetry[i]._id%>" class="mt-5 m-auto">
-                <form method="POST" action="/all/<%=poetry[i]._id%>?_method=DELETE" class= "mt-2 d-flex align-items-center justify-content-between " >
+                <form method="POST" action="/allPoetry/<%=poetry[i]._id%>?_method=DELETE" class= "mt-2 d-flex align-items-center justify-content-between " >
                 <div class="d-flex flex-column p-2">
                     <h2 class="text-white mb-3"><%=poetry[i].title%></h2>
                     <div class="text-white mb-3" ><%=poetry[i].text%></div>
                     <div class="text-light"><%=poetry[i].author%></div>
                     <div class="text-muted"><%=poetry[i].url%></div>
+                    <div class="text-muted"><%=poetry[i].tags%></div>
                     <div class="text-muted">Click:<%=poetry[i].click%></div>
                 </div>
                     <div class="d-flex flex-column p-1">
                         <input class="bg-purple text-light mb-2 "name="id" value="<%=poetry[i]._id%>">
                         <button class="btn bg-purple text-light mb-2" type="submit" >Delete</button>
-                        <a href="/edit/<%=poetry[i]._id%>" class="btn mb-1 bg-purple text-light">Edit</a>
+                        <a href="/editPoetry/<%=poetry[i]._id%>" class="btn mb-1 bg-purple text-light">Edit</a>
                      </div>
                 </form>
             </div>
