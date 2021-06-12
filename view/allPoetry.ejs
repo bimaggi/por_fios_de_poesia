@@ -18,7 +18,7 @@
         <%for(let i= 0; i < poetry.length; i++){%>
             <div id="<%=poetry[i]._id%>" class="mt-5 m-auto">
                 <form method="POST" action="/allPoetry/<%=poetry[i]._id%>?_method=DELETE" class= "mt-2 d-flex align-items-center justify-content-between " >
-                <div class="d-flex flex-column p-2">
+                <div class="d-flex flex-column p-2" style="white-space: pre-wrap">
                     <h2 class="text-white mb-3"><%=poetry[i].title%></h2>
                     <div class="text-white mb-3" ><%=poetry[i].text%></div>
                     <div class="text-light"><%=poetry[i].author%></div>

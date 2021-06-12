@@ -75,7 +75,7 @@
                 if(list.length > 0){
             %>
             <p class="text-center">Resultados da pesquisa por <%= search%>:</p>
-            <div class="card col-6 m-4 p-1 m-auto  ">
+            <div class="card col-6 m-4 p-1 m-auto " style="white-space: pre-wrap">
                 <% list.forEach(function(item){ %>
                     <h2 class="p-2"><%= item.title %></h2>
                     <div class="mb-3" ><%=item.text%></div>
