@@ -10,16 +10,18 @@
     crossorigin="anonymous">
 </head>
 <style>
-    .bg-purple{background-color:#6d5c81}
-    .w-20{ width: 150px} 
+    .bg-purple{background-color:#a389c2}
+    .w-20{ width: 160px} 
     .w-1{width: 40%}
     .line{line-height: 1.8;}
     .h-1{height: 1%}
+    .bg-img{background-image:url('/fundo.jpg');background-repeat: no-repeat;background-size: cover;}
+    .text-p{font-size: 0.8rem; margin:0;padding: 0;margin-left: 1%;}
 </style>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm p-3 container m-auto align-items-end" >
+<body class="bg-img">
+    <header class="bg-white ">
+        <nav class="navbar navbar-expand-sm p-3 container m-auto align-items-end " >
            <div class=" navbar-brand col-2 ">
                  <img src="/logo.jpg" class="rounded-circle w-20 m-4 mt-2" >
             </div>
@@ -28,76 +30,158 @@
                 <p>Um espaço para quem sente a poesia</p>
             </div>
             <div>
-                <ul class="nav m-2" >
-                    <li class="nav-link text-dark">meus links</li>
-                    <li class="nav-link text-dark">meus links</li>
-                    <li class="nav-link text-dark">meus links</li>
+                <ul class="nav ">
+                    <a class="text-decoration-none"href="#init"> <li class="nav-link text-dark m-0">Inicio</li></a>
+                    <a class="text-decoration-none"href="#books"> <li class="nav-link text-dark m-0">Meus Livros</li></a>
+                    <a class="text-decoration-none"href="#author"> <li class="nav-link text-dark m-0">Quem sou</li></a>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-        <div class="container bg-purple ">.  </div>
         <div class="container">
-            <div class="d-flex align-items-left p-4 mt-4">
-                <div class="card col-10 p-2">
+            <form action="/search" method="get">
+                <div class="d-flex justify-content-end mt-5 container">
+                    <input type="text" name="query" placeholder="Buscar por autor ou palavra-chave" class="p-1"/>
+                    <a href="#nana"><input id="sei" type="submit" value="Buscar"/></a>
+
+                </div>
+            </form>
+
+            <div id="init" class="align-items-left p-4 mt-4">
+                <div class="card  p-5">
                     <h2 class="mt-2 mb-4">Poesia e arte!</h2>
                     <h5 class="line ">A poesia vai muito além da estrutura textual de um poema, 
                         ela não tem uma forma específica, não pode ser tocada por 
                         nós, porém, ela nos toca e nos envolve, isso por que a poesia 
-                        é a própria emoção advinda de uma obra.
-                    </h5>
-                    <h5 class="line">
+                        é a própria emoção advinda de uma obra.</br>
                         A sua arte pode estar carregada de poesia, e ser fonte 
-                        inspiradora para quem a lê, mesmo que não haja palavras.
-                    </h5>
-                    <h5 class="line">
+                        inspiradora para quem a lê, mesmo que não haja palavras.</br>
                         Há poesia na dança, na pintura, na escultura, na peça de 
                         teatro, no desenho, no cinema, na costura, na maquiagem e 
                         mesmo no silêncio ou no vázio, encontra-se um fio de poesia.
                     </h5>
-                    <h6 class="line"><strong>Marcia Bimaggi</strong></h6>
+                    <h6 class="line mt-3 mb-3"><strong>Marcia Bimaggi</strong></h6>
                 </div>
-                <div class="col-3 p-5 m-auto">
-                    <a href="https://clubedeautores.com.br/books/search?where=books&what=florir+por+fios+de+poesia"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
-                    <p>Versão impressa</p>
-                   
-                </div>
+                <div class="card mt-5 p-5">
+                    <h2 class="mt-2 mb-4">O tempo através da poesia!</h2>
+                    <h5 class="line  mb-3">
+                        Através da poesia é possível ter uma vasta idéia sobre uma 
+                        sociedade específica, seus costumes, política, matérias-prima,
+                        relacionamentos, leis, doenças, avanços tecnológicos, enfim...
+                        A poesia aparece entre os primeiros registros  das culturas 
+                        letradas, assim como as nossas poesias sem dúvida servirão de 
+                        portais para que as futuras gerações se aproximem dos nossos 
+                        sentimentos e emoções.
+
+                    </h5>
+                </div>    
+                <div class="card mt-5 p-5">
+                   <h2 class="mt-2 mb-5">Poesia e a ciência!</h2>
+                   <h5 class="line mb-3 ">
+                       Estudos realizados por Universidades afirmam que a poesia traz mais 
+                       benefícios que livros de auto-ajuda. Também existem estudos que asseguram 
+                       que a leitura poética auxilia no aprendizado, aumenta a criatividade das 
+                       crianças e estimula a memória nos mais idosos. </br>
+                       Penso que de fato não possa ser o contrário, pois como mencionei acima,
+                       poesia é o próprio sentimento encontrado na arte, e a arte cura, resgata, recupera,
+                       transforma, colore, ilumina, eleva a auto-estima, alegra, afaga, aviva o coração de
+                       quem por ela se deixa tocar.
+                   </h5>
+                </div>    
             </div>
-            <form action="/search" method="get">
-                <div class="d-flex justify-content-end mt-5 container">
-                    <input type="text" name="query" />
-                    <input type="submit" value="Search" />
+            
+                <div class="d-flex" id="nana">
+                     <%
+                     if(results){
+                        if(list.length > 0){
+                     %>
+                     <p class="container m-4 col-1"><strong>Resultados da pesquisa por <%= search%>:</strong></p>
+                     <div class="card col-8 text-center m-4 flex-column" style="white-space: pre-wrap">
+                         <% list.forEach(function(item){ %>
+                             <h2 class="p-2 mt-4 mb-4"><%= item.title %></h2>
+                             <div class="mb-4" ><%=item.text%></div>
+                             <div><strong><%=item.author%></strong></div>
+                             <div class="mb-3"><a href="<%=item.url%>" target="_blank"  class="text-muted text-decoration-none"><%=item.url%></a></div>
+                         <% }); %>
+                    </div>
+                    <div class="container d-flex flex-column mt-5">
+                        <div class="mb-4">
+                            <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+                            <p><strong>Versão impressa</strong></p>
+                        </div>
+                        <div>
+                            <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+                            <p><strong>Versão Impressa</strong></p>
+                        </div>
+                    </div>
+                    <% } else{ %>
+                         <b>Nenhum resultado encontrado para <%=search%>!</b>
+                     <% 
+                         }
+                     }
+                     %>
                 </div>
-            </form>
-            <%
-            if(results){
-                if(list.length > 0){
-            %>
-            <p class="text-center">Resultados da pesquisa por <%= search%>:</p>
-            <div class="card col-6 m-4 p-1 m-auto " style="white-space: pre-wrap">
-                <% list.forEach(function(item){ %>
-                    <h2 class="p-2"><%= item.title %></h2>
-                    <div class="mb-3" ><%=item.text%></div>
-                    <div class=""><strong><%=item.author%></strong></div>
-                    <div class=""><a href="<%=item.url%>" class="text-muted text-decoration-none"><%=item.url%></a></div>
-                <% }); %>
-            </div>
-            <% } else{ %>
-                <b>Nenhum resultado encontrado para <%=search%>!</b>
-            <% 
-                }
-            }
-            %>
            
+                   
+            <div id="author" class="container d-flex flex-column p-5">
+                <div class="container w-25">
+                    <img src="/marcia.jpg" class="w-20 d-flex m-4 rounded-circle" >
+                    <h2 class="mb-3">Marcia Bimaggi</h2>
+                </div>
+                <div class="card bg-white">
+                    <h5 class="line p-5  ">            
+                        Através da escrita encontrei uma porta para expressar minha visão do mundo, 
+                        meus desabafos, meus sentimentos, minha imaginação, minha arte e aprendi a 
+                        transformar e me transformar.
+                        Essa porta uma vez aberta tem um alcance tão vasto, lúcido, criador, intenso, 
+                        louco, acolhedor e belo.
+                        Me descobri poeta, quando percebi a arte em minha vida, em uma variedade de formas, 
+                        cores, tons e sons, que me inspiram e que me permitem ter a ousadia de criar, compartilhar 
+                        e tornar viva o que poderia ser apenas uma palavra ou um conjunto delas, quando muitas vezes 
+                        permitimos apenas que se percam no ar.
+                    </h5>
+                </div>
+            </div>
+            <div id="books" class="container d-flex justify-content-between mt-5">
+                <div>
+                    <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+                    <p><strong>Versão impressa</strong></p>
+                </div>
+                <div>
+                    <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+                    <p><strong>Versão Impressa</strong></p>
+                </div>
+                <div>
+                    <a href="https://hotmart.com/product/florir-por-fios-de-poesia/D46087075T"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+                    <p><strong>Versão digital</strong></p>
+                </div>
+                <div>
+                    <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+                    <p><strong>Versão Digital</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="https://api.whatsapp.com/send?l=pt_BR&phone= 5511954001878 & text= Olá gostaria de adquir um de seus livros//tenho interesse em divulgar minas poesias " target="_blank" class="text-decoration-none">
+               <img src="/whatsapp.png" alt=" Chamar no whatsapp" >
+                    Entrar em contato
+            </a>
+            <a href="mailto:porfiosdepoesia@gmail.com" class="text-decoration-none justify-content-center">
+                <p><strong>Email:</strong>porfiosdepoesia@gmail.com</p>
+            </a>
         </div>
     </main>
+        <hr class="mb-0 mt-0"> 
     <footer>
-        <ul class="navbar-nav w-25 d-flex flex-row m-auto">
-            <li class="nav-item"><a href="https://www.instagram.com/porfiosdepoesia/" class="nav-link text-white"><img src="/instagram.png"class="w-1"></a></li>
-            <li class="nav-item"><a href="https://www.facebook.com/porfiosdepoesias/" class="nav-link text-white"><img src="/facebook.png"class="w-1 "></a></li>
-            <li class="nav-item"><a href="https://www.youtube.com/c/porfiosdepoesia" class="nav-link text-white"><img src="/youtube.png"class="w-1"></a></li>
-        </ul>
+        <p class="mb-0"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-dark text-p" target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+        <div class="container">
+            <ul class="navbar-nav w-25 d-flex flex-row m-auto">
+                <li class="nav-item"><a href="https://www.instagram.com/porfiosdepoesia/"target="_blank" class="nav-link text-white"><img src="/instagram.png"class="w-1"></a></li>
+                <li class="nav-item"><a href="https://www.facebook.com/porfiosdepoesias/"target="_blank" class="nav-link text-white"><img src="/facebook.png"class="w-1 "></a></li>
+                <li class="nav-item"><a href="https://www.youtube.com/c/porfiosdepoesia" target="_blank" class="nav-link text-white"><img src="/youtube.png"class="w-1"></a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>
