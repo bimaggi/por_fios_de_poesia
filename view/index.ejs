@@ -30,7 +30,7 @@
                 <p>Um espaço para quem sente a poesia</p>
             </div>
             <div>
-                <ul class="nav ">
+                <ul class="nav">
                     <a class="text-decoration-none"href="#init"> <li class="nav-link text-dark m-0">Inicio</li></a>
                     <a class="text-decoration-none"href="#books"> <li class="nav-link text-dark m-0">Meus Livros</li></a>
                     <a class="text-decoration-none"href="#author"> <li class="nav-link text-dark m-0">Quem sou</li></a>
@@ -39,15 +39,52 @@
         </nav>
     </header>
     <main>
-        <div class="container">
-            <form action="/search" method="get">
-                <div class="d-flex justify-content-end mt-5 container">
-                    <input type="text" name="query" placeholder="Buscar por autor ou palavra-chave" class="p-1"/>
-                    <a href="#nana"><input id="sei" type="submit" value="Buscar"/></a>
+        <form action="/search" method="get" id="searchForm">
+            <div class="d-flex justify-content-end mt-5 container">
+                <input type="text" name="query" placeholder="Buscar por autor ou palavra-chave" class="p-1"/>
+                <button   type="submit"class="p-1">Buscar</button>
 
+            </div>
+        </form>
+            <div class="d-flex">
+                <%
+                 if(results){
+                    if(list.length > 0){
+                 %>
+                 <p class="container m-4 col-1"><strong>Resultados da pesquisa por <%= search%>:</strong></p>
+                 <div class="card col-8 text-center m-4 flex-column" style="white-space: pre-wrap">
+                     <% list.forEach(function(item){ %>
+                         <h2 class="p-2 mt-4 mb-4"><%= item.title %></h2>
+                         <div class="mb-4" ><%=item.text%></div>
+                         <div><strong><%=item.author%></strong></div>
+                         <div class="mb-3"><a href="<%=item.url%>" target="_blank"  class="text-muted text-decoration-none"><%=item.url%></a></div>
+                     <% }); %>
                 </div>
-            </form>
+                <div class="container d-flex flex-column mt-5">
+                    <div class="mb-4">
+                        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+                        <p><strong>Versão impressa</strong></p>
+                    </div>
+                    <div>
+                        <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+                        <p><strong>Versão Impressa</strong></p>
+                    </div>
+                </div>
+                <% } else{ %>
+                     <b class="m-auto">Nenhum resultado encontrado para "<%=search%>"</b>
+                 <% 
+                     }
+                 }
+                 %>
+            </div>
 
+
+
+
+
+
+
+        <div class="container">
             <div id="init" class="align-items-left p-4 mt-4">
                 <div class="card  p-5">
                     <h2 class="mt-2 mb-4">Poesia e arte!</h2>
@@ -91,37 +128,6 @@
                 </div>    
             </div>
             
-                <div class="d-flex" id="nana">
-                     <%
-                     if(results){
-                        if(list.length > 0){
-                     %>
-                     <p class="container m-4 col-1"><strong>Resultados da pesquisa por <%= search%>:</strong></p>
-                     <div class="card col-8 text-center m-4 flex-column" style="white-space: pre-wrap">
-                         <% list.forEach(function(item){ %>
-                             <h2 class="p-2 mt-4 mb-4"><%= item.title %></h2>
-                             <div class="mb-4" ><%=item.text%></div>
-                             <div><strong><%=item.author%></strong></div>
-                             <div class="mb-3"><a href="<%=item.url%>" target="_blank"  class="text-muted text-decoration-none"><%=item.url%></a></div>
-                         <% }); %>
-                    </div>
-                    <div class="container d-flex flex-column mt-5">
-                        <div class="mb-4">
-                            <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
-                            <p><strong>Versão impressa</strong></p>
-                        </div>
-                        <div>
-                            <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
-                            <p><strong>Versão Impressa</strong></p>
-                        </div>
-                    </div>
-                    <% } else{ %>
-                         <b>Nenhum resultado encontrado para <%=search%>!</b>
-                     <% 
-                         }
-                     }
-                     %>
-                </div>
            
                    
             <div id="author" class="container d-flex flex-column p-5">
@@ -162,15 +168,16 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
+        <div class="text-center mt-4 d-flex flex-column">
             <a href="https://api.whatsapp.com/send?l=pt_BR&phone= 5511954001878 & text= Olá gostaria de adquir um de seus livros//tenho interesse em divulgar minas poesias " target="_blank" class="text-decoration-none">
-               <img src="/whatsapp.png" alt=" Chamar no whatsapp" >
-                    Entrar em contato
+                <img src="/whatsapp.png" alt=" Chamar no whatsapp" >
+                     Entrar em contato
+             </a>
+             <a href="mailto:porfiosdepoesia@gmail.com" class="text-decoration-none justify-content-center">
+                <strong>Email:</strong>porfiosdepoesia@gmail.com
             </a>
-            <a href="mailto:porfiosdepoesia@gmail.com" class="text-decoration-none justify-content-center">
-                <p><strong>Email:</strong>porfiosdepoesia@gmail.com</p>
-            </a>
-        </div>
+        </div>     
+
     </main>
         <hr class="mb-0 mt-0"> 
     <footer>
@@ -183,5 +190,11 @@
             </ul>
         </div>
     </footer>
+
+    
+
+    
+    
 </body>
+
 </html>
