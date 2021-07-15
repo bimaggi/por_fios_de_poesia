@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const PoetryShema = new mongoose.Schema({
+const PoetrySchema = new mongoose.Schema({
     title: {type:String, require:true},
     text: {type:String, require:true},
     author: {type:String, require:true},
-    tags:[String],
     url: {type:String, require:true},
-    click: {type:Number, default:0}
+    click: {type:Number, default:0},
+    tags: [String],
 })
 
-module.exports = mongoose.model('Poetry',PoetryShema)
+module.exports = mongoose.model('Poetry',PoetrySchema)

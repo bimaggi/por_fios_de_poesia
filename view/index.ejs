@@ -9,6 +9,7 @@
     rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
     crossorigin="anonymous">
 </head>
+
 <style>
     .bg-purple{background-color:#a389c2}
     .w-20{ width: 160px} 
@@ -43,47 +44,37 @@
             <div class="d-flex justify-content-end mt-5 container">
                 <input type="text" name="query" placeholder="Buscar por autor ou palavra-chave" class="p-1"/>
                 <button   type="submit"class="p-1">Buscar</button>
-
             </div>
         </form>
-            <div class="d-flex">
-                <%
-                 if(results){
-                    if(list.length > 0){
-                 %>
-                 <p class="container m-4 col-1"><strong>Resultados da pesquisa por <%= search%>:</strong></p>
-                 <div class="card col-8 text-center m-4 flex-column" style="white-space: pre-wrap">
-                     <% list.forEach(function(item){ %>
-                         <h2 class="p-2 mt-4 mb-4"><%= item.title %></h2>
-                         <div class="mb-4" ><%=item.text%></div>
-                         <div><strong><%=item.author%></strong></div>
-                         <div class="mb-3"><a href="<%=item.url%>" target="_blank"  class="text-muted text-decoration-none"><%=item.url%></a></div>
-                     <% }); %>
-                </div>
-                <div class="container d-flex flex-column mt-5">
-                    <div class="mb-4">
-                        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
-                        <p><strong>Versão impressa</strong></p>
-                    </div>
-                    <div>
-                        <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
-                        <p><strong>Versão Impressa</strong></p>
-                    </div>
-                </div>
-                <% } else{ %>
-                     <b class="m-auto">Nenhum resultado encontrado para "<%=search%>"</b>
-                 <% 
-                     }
-                 }
-                 %>
-            </div>
-
-
-
-
-
-
-
+        <div class="d-flex">
+            <%
+             if(results){
+                if(list.length > 0){
+             %>
+             <p class="container m-4 col-1"><strong>Resultados da pesquisa por<%=search%>:</strong></p>
+             <div class="card col-8 text-center m-4 flex-column" style="white-space: pre-wrap">
+                <%list.forEach(function(item){%>
+                   <h2 class="p-2 mt-4 mb-4"><%=item.title%></h2>
+                   <div class="mb-4" ><%=item.text%></div>
+                   <div><strong><%=item.author%></strong></div>
+                   <div class="mb-3"><a href="<%=item.url%>" target="_blank" class="text-muted text-decoration-none"><%=item.url%></a></div>
+                <%})%>
+				</div>
+            	<div class="container d-flex flex-column mt-5">
+            	    <div class="mb-4">
+            	        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+            	        <p><strong>Versão impressa</strong></p>
+            	    </div>
+            	    <div>
+            	        <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+            	        <p><strong>Versão Impressa</strong></p>
+            	    </div>
+            	</div>
+            	<%}else{%>
+                	<b class="m-auto">Nenhum resultado encontrado para "<%=search%>"</b>
+            	<% } 
+            }%>
+        </div>
         <div class="container">
             <div id="init" class="align-items-left p-4 mt-4">
                 <div class="card  p-5">
@@ -110,7 +101,6 @@
                         letradas, assim como as nossas poesias sem dúvida servirão de 
                         portais para que as futuras gerações se aproximem dos nossos 
                         sentimentos e emoções.
-
                     </h5>
                 </div>    
                 <div class="card mt-5 p-5">
@@ -127,9 +117,6 @@
                    </h5>
                 </div>    
             </div>
-            
-           
-                   
             <div id="author" class="container d-flex flex-column p-5">
                 <div class="container w-25">
                     <img src="/marcia.jpg" class="w-20 d-flex m-4 rounded-circle" >
@@ -177,7 +164,6 @@
                 <strong>Email:</strong>porfiosdepoesia@gmail.com
             </a>
         </div>     
-
     </main>
         <hr class="mb-0 mt-0"> 
     <footer>
@@ -190,11 +176,5 @@
             </ul>
         </div>
     </footer>
-
-    
-
-    
-    
 </body>
-
 </html>

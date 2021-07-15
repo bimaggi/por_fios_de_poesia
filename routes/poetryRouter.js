@@ -14,7 +14,6 @@ router.get('/editPoetry/:id',poetryController.loadPoetry)
 router.post('/addPoetry',express.urlencoded({extended:true}),poetryController.addPoetry);
 router.post('/editPoetry/:id',express.urlencoded({extended:true}), poetryController.editPoetry)
 
-
 router.delete('/allPoetry/:id',poetryController.deletePoetry);
 router.delete(('/allPoetry',express.urlencoded({extended:true}) ,poetryController.deletePoetry));
 
