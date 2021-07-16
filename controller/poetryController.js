@@ -79,5 +79,5 @@ const renderSearch = async(req,res)=>{
         res.send(error)
     }
  };
-     
+
 module.exports = {showAdd,addPoetry,allPoetry,deletePoetry,loadPoetry,editPoetry,render,renderSearch}

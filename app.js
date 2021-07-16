@@ -1,12 +1,20 @@
 const express = require('express');
 const app = express();
 
+const dotenv=require('dotenv')
+dotenv.config()
+
 const path = require('path');
 const poetryRouter= require('./routes/poetryRouter');
-const PORT = 5000;
+const userRouter = require('./routes/userRouter')
+//const PORT = 3000;
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/poetry',{ useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_CONNECTION_URL,
+    {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true
+    });
 
 const db = mongoose.connection;
 db.on('error',()=>{console.log('Houve um erro')});
@@ -17,5 +25,8 @@ app.set('views',path.join(__dirname,'view'));
 
 app.use(express.static('public'));
 app.use('/', poetryRouter);
+app.use('/user', userRouter);
 
-app.listen(PORT,()=>{ console.log('rodando na porta', PORT)});
+
+//app.listen(PORT,()=>{ console.log('rodando na porta', PORT)});
+app.listen(process.env.PORT,()=>{ console.log('Server Running')});
