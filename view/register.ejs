@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    crossorigin="anonymous">
+</head>
+
+<style>
+    .bg-purple{ background-color:#6d5c81} 
+ </style>
+
+<body class="bg-dark">
+    <div class="container w-50 mt-4 pt-5 text-center rounded text-white">
+        <h1>Add User</h1>
+        <form action="/user/register" method="POST" class="d-flex flex-column ">
+            <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Name">
+            <input class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
+            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Password">
+            <div class="d-flex">
+                <div>
+                    <input type="checkbox" name="privacity" id="privacity" required>
+                </div>
+                <div class=" text-light small">
+                   <p class=" m-auto "> Concordo com a Política de Privacidade do site Por fios de poesia e que a minhas 
+                    informações pessoais serão guardadas com a finalidade de criar um usuário, para 
+                    publicar poesias, poemas ou frases de minha autoria , ou  poesias, poemas ou frases 
+                    aos quais tenho autorização para divulgar.</p></br>
+                    <p>Para saber mais consulte a nossa <a href="privicyPolicy" class=" text-muted">Política de Privacidade.</a></p>
+                </div>
+            </div>  
+            <button class="btn mt-3 mb-4 p-2  bg-purple text-white rounded">Register</button>
+        </div>
+        
+        
+        </form>
+       
+</body>
+</html>

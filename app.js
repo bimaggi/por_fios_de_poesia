@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-const dotenv=require('dotenv')
-dotenv.config()
+const dotenv=require('dotenv');
+dotenv.config();
 
 const path = require('path');
 const poetryRouter= require('./routes/poetryRouter');
@@ -26,7 +26,6 @@ app.set('views',path.join(__dirname,'view'));
 app.use(express.static('public'));
 app.use('/', poetryRouter);
 app.use('/user', userRouter);
-
 
 //app.listen(PORT,()=>{ console.log('rodando na porta', PORT)});
 app.listen(process.env.PORT,()=>{ console.log('Server Running')});
