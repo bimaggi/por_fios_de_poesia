@@ -8,11 +8,11 @@ const addPoetry = async(req, res)=>{
     let poetry = new Poetry(req.body)
     try{
         let doc = await poetry.save()
-        res.redirect('/allPoetry')
+        res.redirect('/admin/allPoetry')
     }catch(error){
         res.send(error)
     }
-};
+};  
 
 const allPoetry = async(req,res)=>{
     try{
@@ -30,7 +30,7 @@ const deletePoetry= async(req,res)=>{
     }
     try{
         await Poetry.findByIdAndDelete(id)
-        res.redirect('/allPoetry/')
+        res.redirect('/admin/allPoetry/')
     }catch(error){
         res.status(404).send(error)
     }
@@ -60,24 +60,10 @@ const editPoetry = async(req,res)=>{
 
     try{
         let doc = await Poetry.updateOne({_id:id}, poetry)
-        res.redirect('/allPoetry')
+        res.redirect('/admin/allPoetry')
     }catch(error){
         res.send(error)
     }
 };
 
-const render= (req, res)=>{
-    res.render('index',{ results: false })
-};
-
-const renderSearch = async(req,res)=>{
-    let search = req.query.query
-    try{
-        let docs = await Poetry.find({tags:{$all: search }})
-        res.render('index', { results: true, search: req.query.query, list: docs })
-    }catch(error){
-        res.send(error)
-    }
- };
-
-module.exports = {showAdd,addPoetry,allPoetry,deletePoetry,loadPoetry,editPoetry,render,renderSearch}
+module.exports = {showAdd,addPoetry,allPoetry,deletePoetry,loadPoetry,editPoetry}

@@ -2,16 +2,14 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-
 const showRegister = (req,res)=>{
     res.render('register',{body:{}})
 }
 
 const register = async(req,res)=>{
     const selectedUser = await User.findOne({email:req.body.email});
-    if(selectedUser){
-        return res.status(400).send("Email já cadastrado!")
-    }
+    if(selectedUser)return res.status(400).send("Email já cadastrado!")
+    
     const user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -19,7 +17,7 @@ const register = async(req,res)=>{
     })
     try{
         let savedUser = await user.save()
-        res.redirect('/user/login')
+        res.send('Usuário Cadastrado com sucesso')
     }catch(error){
         res.status(400).send(error) 
     }
@@ -31,23 +29,19 @@ const showlogin = (req,res)=>{
 
 const login = async(req,res)=>{
     const selectedUser = await User.findOne({email:req.body.email});
-    if(!selectedUser){
-        return res.status(400).send("Email ou senha incorreto!")
-    }
-     const passwordAndUserMatch = await bcrypt.compare(req.body.password,selectedUser.password)
-    if(!passwordAndUserMatch){
-        return res.status(400).send("Email ou senha incorreto!")
-    }
-    const token =jwt.sign({_id:selectedUser._id}, process.env.TOKEN_SECRET)
-    res.header('authorization-token',token)
-    res.send('Usuário Logado!')
+    if(!selectedUser)return res.status(400).send("Email ou senha incorreto!")
+
+    const token = jwt.sign({email:selectedUser.email,admin:selectedUser.admin}, process.env.TOKEN_SECRET)
+    
+    const passwordAndUserMatch = await bcrypt.compareSync(req.body.password,selectedUser.password)
+    if(!passwordAndUserMatch) return res.status(400).send("Email ou senha incorreto!")
+
+        res.header('authorization-token',token)
+        res.send('Usuário logado')
+       
 }
 
-const showPrivicyPolicy = (req,res)=>{
-    res.render('privicyPolicy')
-
-} 
 
 
 
-module.exports = {register,login,showRegister,showlogin,showPrivicyPolicy}
+module.exports = {register,login,showRegister,showlogin}

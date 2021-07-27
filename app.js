@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
-
-const dotenv=require('dotenv');
+const path = require('path');
+const dotenv = require('dotenv');
 dotenv.config();
 
-const path = require('path');
-const poetryRouter= require('./routes/poetryRouter');
+
+const homePageRouter = require('./routes/homePageRouter')
 const userRouter = require('./routes/userRouter')
-//const PORT = 3000;
+const privicyRouter = require('./routes/privicyRouter')
+const poetryRouter = require('./routes/poetryRouter');
+const auth = require('./controller/authController');
+
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_CONNECTION_URL,
@@ -24,8 +27,12 @@ app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'view'));
 
 app.use(express.static('public'));
-app.use('/', poetryRouter);
-app.use('/user', userRouter);
+
+app.use('/',homePageRouter);
+app.use('/user',userRouter);
+app.use('/privicyPolicy',privicyRouter);
+app.use('/admin',auth,poetryRouter);
+
 
 //app.listen(PORT,()=>{ console.log('rodando na porta', PORT)});
 app.listen(process.env.PORT,()=>{ console.log('Server Running')});

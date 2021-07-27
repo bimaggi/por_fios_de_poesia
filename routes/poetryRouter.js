@@ -4,10 +4,9 @@ const poetryController= require('../controller/poetryController');
 const methodOverride = require('method-override'); // Utilizado para fazer o delete sem ser pelo fetch
 
 router.use(methodOverride('_method'));
-router.get('/',poetryController.render)
-router.get('/search', poetryController.renderSearch)
 
-router.get('/addPoetry', poetryController.showAdd);
+
+router.get('/addPoetry',poetryController.showAdd);
 router.get('/allPoetry',poetryController.allPoetry);
 router.get('/editPoetry/:id',poetryController.loadPoetry)
 
@@ -17,4 +16,4 @@ router.post('/editPoetry/:id',express.urlencoded({extended:true}), poetryControl
 router.delete('/allPoetry/:id',poetryController.deletePoetry);
 router.delete(('/allPoetry',express.urlencoded({extended:true}) ,poetryController.deletePoetry));
 
-module.exports = router;
+module.exports = router
