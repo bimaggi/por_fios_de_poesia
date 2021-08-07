@@ -23,10 +23,10 @@
 <body class="bg-img">
     <header class="bg-white ">
         <nav class="navbar p-3 container m-auto align-items-end " >
-           <div class=" navbar-brand col-2 ">
+           <div class=" navbar-brand col-1 ">
                  <img src="/logo.jpg" class="rounded-circle w-20 m-4 mt-2" >
             </div>
-            <div class="col-6 p-1">
+            <div class="col-4 p-1">
                 <h3>Por fios de poesia</h3>
                 <p>Um espaço para quem sente a poesia</p>
             </div>
@@ -35,6 +35,8 @@
                     <a class="text-decoration-none"href="#init"> <li class="nav-link text-dark m-0">Inicio</li></a>
                     <a class="text-decoration-none"href="#books"> <li class="nav-link text-dark m-0">Meus Livros</li></a>
                     <a class="text-decoration-none"href="#author"> <li class="nav-link text-dark m-0">Quem sou</li></a>
+                    <a class="text-decoration-none"href="user/register"><li class="nav-link text-dark m-0">Adicione poesias</li></a>
+                
                 </ul>
             </div>
         </nav>
@@ -51,7 +53,7 @@
              if(results){
                 if(list.length > 0){
              %>
-             <p class="container m-4 col-1"><strong>Resultados da pesquisa por<%=search%>:</strong></p>
+             <p class="container m-4 col-1"><strong>Resultados da pesquisa por <%=search%>:</strong></p>
              <div class="card col-8 text-center m-4 flex-column" style="white-space: pre-wrap">
                 <%list.forEach(function(item){%>
                    <h2 class="p-2 mt-4 mb-4"><%=item.title%></h2>

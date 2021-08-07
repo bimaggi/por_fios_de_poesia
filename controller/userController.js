@@ -17,7 +17,7 @@ const register = async(req,res)=>{
     })
     try{
         let savedUser = await user.save()
-        res.send('Usuário Cadastrado com sucesso')
+        res.redirect('/user/login')
     }catch(error){
         res.status(400).send(error) 
     }
@@ -35,13 +35,9 @@ const login = async(req,res)=>{
     
     const passwordAndUserMatch = await bcrypt.compareSync(req.body.password,selectedUser.password)
     if(!passwordAndUserMatch) return res.status(400).send("Email ou senha incorreto!")
-
+        res.cookie("token_protegido",token);
         res.header('authorization-token',token)
-        res.send('Usuário logado')
-       
+        res.send('logado')
 }
-
-
-
 
 module.exports = {register,login,showRegister,showlogin}

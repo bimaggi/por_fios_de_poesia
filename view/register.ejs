@@ -12,11 +12,13 @@
 
 <style>
     .bg-purple{ background-color:#6d5c81} 
+    .w-35{ width: 400px}
+    .font{ font-size: .7rem;}
  </style>
 
 <body class="bg-dark">
-    <div class="container w-50 mt-4 pt-5 text-center rounded text-white">
-        <h1>Add User</h1>
+    <div class="container w-35 mt-5 pt-5 text-center rounded text-white">
+        <h1 class="mt-5 pt-2 mb-3">Create account</h1>
         <form action="/user/register" method="POST" class="d-flex flex-column ">
             <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Name">
             <input class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
@@ -26,13 +28,13 @@
                     <input type="checkbox" name="privacity" id="privacity" required>
                 </div>
                 <div class=" text-light small">
-                   <p class=" m-auto "> Concordo com a Política de Privacidade do site Por fios de poesia e que a minhas 
+                   <p class=" m-auto font"> Concordo com a Política de Privacidade do site Por fios de poesia e que a minhas 
                     informações pessoais serão guardadas com a finalidade de criar um usuário, para 
                     publicar poesias, poemas ou frases de minha autoria , ou  poesias, poemas ou frases 
                     aos quais tenho autorização para divulgar.</p></br>
                 </div>
             </div>  
-            <button class="btn mt-3 mb-4 p-2  bg-purple text-white rounded">Register</button>
+            <button class="btn mt-1 mb-4 p-2  bg-purple text-white rounded">Register</button>
         </form>
         <p class="text-light small">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
     </div>

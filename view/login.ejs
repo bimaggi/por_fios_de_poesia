@@ -12,18 +12,51 @@
 
 <style>
     .bg-purple{ background-color:#6d5c81} 
+    .w-35{ width: 350px;}
  </style>
 
 <body class="bg-dark">
-    <div class="container w-50 mt-5 pt-5 text-center rounded text-white">
-        <h1>Login</h1>
-        <form action="/user/login" method="POST"class="d-flex flex-column" >
-            <input class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
-            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Password">
-            <button class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" >Login</button>
+    <div class="container w-35 mt-5 pt-5 text-center rounded text-white">
+        <h1 class="mt-5 pt-4 mb-3">Login</h1>
+        <form class="d-flex flex-column" >
+            <input class="mb-3 p-2 rounded" id="email" name="email" value="<%=body.email%>" placeholder="Email">
+            <input class="mb-3 p-2 rounded" id="password" name="password" value="<%=body.password%>" placeholder="Password">
+            <button type="submit" class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" id="login" >Login</button>
             <p><a href="#" class="text-decoration-none text-muted">forgot your password</a></p>
             <p><a href="register" class="text-decoration-none text-muted" >Create account</a></p>
         </form>
     </div>
+    <script>
+        document.querySelector('#login').addEventListener('click',(e)=>{
+            e.preventDefault()
+
+        let dados = {
+            email:document.querySelector('#email'),
+            password:document.querySelector('#password')
+        }
+        const options = {          
+            method: "POST",          
+            headers: new Headers({ "content-type": "application/json" }),          
+            body:(JSON.stringify({email:email.value,password:password.value})),        
+        };
+        //console.log('esse é o options',options)
+
+        fetch("http://localhost:3000/user/login", options).then((http) => {          
+            const new_token = http.headers.get("authorization-token");          
+            // Aqui eu vejo o valor do headers passado pelo back          
+            //console.log("esse é o new token",new_token);          
+            localStorage.setItem("authorization-token",new_token);
+           
+            // Essa rota que eu mando, pode ser uma casca vazia, que vai fazer outro fetch com o localstorage,
+            // que mostre na tela os dados necessários ou uma mensagem de acesso proibido :)     
+            if(new_token){
+                window.location.replace("http://localhost:3000/admin/addPoetry")              
+            }else{
+                alert('Email ou senha inválidos!')
+            }  
+        })
+       
+    })
+    </script>
 </body>
 </html>

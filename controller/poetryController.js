@@ -5,12 +5,24 @@ const showAdd = (req,res)=>{
 };
 
 const addPoetry = async(req, res)=>{
-    let poetry = new Poetry(req.body)
+    //let poetry = new Poetry(req.body)
+    let poetry = new Poetry({
+        title : req.body.title,
+        text: req.body.text,
+        author: req.body.author,
+        tags:req.body.tags,
+        url: req.body.url,
+        post_by: req.user.email  
+    })
     try{
         let doc = await poetry.save()
-        res.redirect('/admin/allPoetry')
+        if(req.user.admin == true){
+            res.redirect('/admin/allPoetry')
+        }else{
+            res.send('Adicionado com sucesso')
+        }
     }catch(error){
-        res.send(error)
+       res.send(error)
     }
 };  
 

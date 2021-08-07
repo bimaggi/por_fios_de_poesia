@@ -13,4 +13,6 @@ const renderSearch = async(req,res)=>{
         res.send(error)
     }
 };
+
+
 module.exports = {render,renderSearch}
