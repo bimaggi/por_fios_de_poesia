@@ -7,13 +7,14 @@ const isAdmin = require('../controller/isAdmin')
 router.use(methodOverride('_method'));
 
 router.get('/addPoetry',poetryController.showAdd);
-router.get('/allPoetry',isAdmin,poetryController.allPoetry);
-router.get('/editPoetry/:id',isAdmin,poetryController.loadPoetry)
+router.get('/allPoetry',poetryController.allPoetry);
 
-router.post('/addPoetry',express.urlencoded({extended:true}),poetryController.addPoetry,isAdmin);
-router.post('/editPoetry/:id',express.urlencoded({extended:true}),isAdmin, poetryController.editPoetry)
+router.get('/editPoetry/:id',poetryController.loadPoetry)
 
-router.delete('/allPoetry/:id',isAdmin,poetryController.deletePoetry);
-router.delete(('/allPoetry',express.urlencoded({extended:true}),isAdmin,poetryController.deletePoetry));
+router.post('/addPoetry',express.urlencoded({extended:true}),poetryController.addPoetry);
+router.post('/editPoetry/:id',express.urlencoded({extended:true}), poetryController.editPoetry)
+
+router.delete('/allPoetry/:id',poetryController.deletePoetry);
+router.delete(('/allPoetry',express.urlencoded({extended:true}),poetryController.deletePoetry));
 
 module.exports = router

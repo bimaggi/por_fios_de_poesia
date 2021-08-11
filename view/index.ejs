@@ -8,44 +8,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
     rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="style/index.css">
 </head>
-
-<style>
-    .bg-purple{background-color:#a389c2}
-    .w-20{ width: 160px} 
-    .w-1{width: 40%}
-    .line{line-height: 1.8;}
-    .h-1{height: 1%}
-    .bg-img{background-image:url('/fundo.jpg');background-repeat: no-repeat;background-size: cover;}
-    .text-p{font-size: 0.8rem; margin:0;padding: 0;margin-left: 1%;}
-</style>
-
-<body class="bg-img">
-    <header class="bg-white ">
-        <nav class="navbar p-3 container m-auto align-items-end " >
-           <div class=" navbar-brand col-1 ">
-                 <img src="/logo.jpg" class="rounded-circle w-20 m-4 mt-2" >
-            </div>
-            <div class="col-4 p-1">
+<body>
+    <header>
+        <div class="container menu">
+            <div class=" logo">
+                <img src="/logo.jpg">
                 <h3>Por fios de poesia</h3>
-                <p>Um espaço para quem sente a poesia</p>
             </div>
-            <div>
-                <ul class="nav">
-                    <a class="text-decoration-none"href="#init"> <li class="nav-link text-dark m-0">Inicio</li></a>
-                    <a class="text-decoration-none"href="#books"> <li class="nav-link text-dark m-0">Meus Livros</li></a>
-                    <a class="text-decoration-none"href="#author"> <li class="nav-link text-dark m-0">Quem sou</li></a>
-                    <a class="text-decoration-none"href="user/register"><li class="nav-link text-dark m-0">Adicione poesias</li></a>
-                
-                </ul>
+            <div class="list">
+                <ul class="d-flex">
+                    <a href="#init"> <li>Inicio</li></a>
+                    <a href="#author"> <li>Quem sou</li></a>
+                    <a href="#books"> <li>Meus Livros</li></a>
+                    <a href="user/login"><li>Adicione poesias</li></a>
+                </ul></div>
+
             </div>
-        </nav>
+        </div>
     </header>
-    <main>
+    <main class="container">
         <form action="/search" method="get" id="searchForm">
-            <div class="d-flex justify-content-end mt-5 container">
-                <input type="text" name="query" placeholder="Buscar por autor ou palavra-chave" class="p-1"/>
-                <button   type="submit"class="p-1">Buscar</button>
+            <div class="container search">
+                <input type="text"name="query" placeholder="Buscar por autor ou palavra-chave"/>
+                <button type="submit">Buscar</button>
             </div>
         </form>
         <div class="d-flex">
@@ -63,12 +50,12 @@
                 <%})%>
 				</div>
             	<div class="container d-flex flex-column mt-5">
-            	    <div class="mb-4">
-            	        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+            	    <div class="mb-4 book">
+            	        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
             	        <p><strong>Versão impressa</strong></p>
             	    </div>
-            	    <div>
-            	        <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+            	    <div class="book">
+            	        <a href="#"><img src="/poesiaDeTerreiro.jpg"></a>
             	        <p><strong>Versão Impressa</strong></p>
             	    </div>
             	</div>
@@ -97,7 +84,7 @@
                     <h2 class="mt-2 mb-4">O tempo através da poesia!</h2>
                     <h5 class="line  mb-3">
                         Através da poesia é possível ter uma vasta idéia sobre uma 
-                        sociedade específica, seus costumes, política, matérias-prima,
+                        sociedade específica, seus costumes, política, matérias-primas,
                         relacionamentos, leis, doenças, avanços tecnológicos, enfim...
                         A poesia aparece entre os primeiros registros  das culturas 
                         letradas, assim como as nossas poesias sem dúvida servirão de 
@@ -120,8 +107,8 @@
                 </div>    
             </div>
             <div id="author" class="container d-flex flex-column p-5">
-                <div class="container w-25">
-                    <img src="/marcia.jpg" class="w-20 d-flex m-4 rounded-circle" >
+                <div class="container w-25 author">
+                    <img src="/marcia.jpg" class="d-flex m-4 rounded-circle" >
                     <h2 class="mb-3">Marcia Bimaggi</h2>
                 </div>
                 <div class="card bg-white">
@@ -132,27 +119,26 @@
                         Essa porta uma vez aberta tem um alcance tão vasto, lúcido, criador, intenso, 
                         louco, acolhedor e belo.
                         Me descobri poeta, quando percebi a arte em minha vida, em uma variedade de formas, 
-                        cores, tons e sons, que me inspiram e que me permitem ter a ousadia de criar, compartilhar 
-                        e tornar viva o que poderia ser apenas uma palavra ou um conjunto delas, quando muitas vezes 
+                         e tornar viva o que poderia ser apenas uma palavra ou um conjunto delas, quando muitas vezes 
                         permitimos apenas que se percam no ar.
                     </h5>
                 </div>
             </div>
-            <div id="books" class="container d-flex justify-content-between mt-5">
-                <div>
-                    <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+            <div id="books" class="container d-sm-flex justify-content-between text-center mt-2">
+                <div class="">
+                    <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
                     <p><strong>Versão impressa</strong></p>
                 </div>
                 <div>
-                    <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+                    <a href="#"><img src="/poesiaDeTerreiro.jpg"></a>
                     <p><strong>Versão Impressa</strong></p>
                 </div>
                 <div>
-                    <a href="https://hotmart.com/product/florir-por-fios-de-poesia/D46087075T"target="_blank"><img src="/florirPorFiosDePoesia.jpg" class="w-20" ></a>
+                    <a href="https://hotmart.com/product/florir-por-fios-de-poesia/D46087075T"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
                     <p><strong>Versão digital</strong></p>
                 </div>
                 <div>
-                    <a href="#"><img src="/poesiaDeTerreiro.jpg" class="w-20" ></a>
+                    <a href="#"><img src="/poesiaDeTerreiro.jpg"></a>
                     <p><strong>Versão Digital</strong></p>
                 </div>
             </div>

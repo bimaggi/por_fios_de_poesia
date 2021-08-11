@@ -22,21 +22,24 @@
         <form action="/user/register" method="POST" class="d-flex flex-column ">
             <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Name">
             <input class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
-            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Password">
+            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Password min 6 characters">
             <div class="d-flex">
                 <div>
                     <input type="checkbox" name="privacity" id="privacity" required>
                 </div>
                 <div class=" text-light small">
-                   <p class=" m-auto font"> Concordo com a Política de Privacidade do site Por fios de poesia e que a minhas 
+                   <p class=" m-auto font"> Concordo com a Política de Privacidade do site Por fios de poesia e que as minhas 
                     informações pessoais serão guardadas com a finalidade de criar um usuário, para 
-                    publicar poesias, poemas ou frases de minha autoria , ou  poesias, poemas ou frases 
-                    aos quais tenho autorização para divulgar.</p></br>
+                    publicar poesias, poemas e urls de minha autoria, ou poesias, poemas e urls aos quais tenho autorização para divulgar.</p></br>
                 </div>
             </div>  
             <button class="btn mt-1 mb-4 p-2  bg-purple text-white rounded">Register</button>
         </form>
-        <p class="text-light small">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
+        <p class="text-light small pb-3">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
     </div>
 </body>
+<footer>
+    <hr class="mb-0 mt-5 bg-white">
+    <p class="mb-0 small"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+</footer>
 </html>

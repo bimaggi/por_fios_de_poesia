@@ -1,4 +1,5 @@
 const Poetry = require('../models/Poetry');
+const isAdmin = require('./isAdmin');
 
 const showAdd = (req,res)=>{
     res.render('addPoetry',{body:{}})
@@ -16,11 +17,7 @@ const addPoetry = async(req, res)=>{
     })
     try{
         let doc = await poetry.save()
-        if(req.user.admin == true){
             res.redirect('/admin/allPoetry')
-        }else{
-            res.send('Adicionado com sucesso')
-        }
     }catch(error){
        res.send(error)
     }
@@ -28,8 +25,13 @@ const addPoetry = async(req, res)=>{
 
 const allPoetry = async(req,res)=>{
     try{
-        let poetries = await Poetry.find({})
-        res.render('allPoetry',{poetry:poetries})
+        if(req.user.admin == true){
+            let poetries = await Poetry.find({})
+            res.render('allPoetry',{poetry:poetries})
+        }else{
+            let poetries = await Poetry.find({post_by:req.user.email})
+            res.render('allPoetry',{poetry:poetries})
+        }
     }catch(error){
         res.send(error)
     }

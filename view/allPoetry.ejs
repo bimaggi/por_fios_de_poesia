@@ -16,7 +16,10 @@
 
 <body class="bg-dark">
     <div class="container w-75 p-5 mt-4">
-        <a href="/admin/addPoetry" class="text-muted"><h4>Add Poetry</h4></a>
+        <div class="">
+            <a href="/admin/addPoetry" class="text-muted"><h4>Add Poetry</h4></a>
+            <a href="/" class="text-muted"><h4>Home</h4></a>
+        </div>
         
         <%for(let i= 0; i < poetry.length; i++){%>
             <div id="<%=poetry[i]._id%>" class="mt-5 m-auto">
@@ -39,4 +42,8 @@
         <%}%>
     </div>
 </body>
+<footer>
+    <hr class="mb-0 mt-5 bg-white">
+    <p class="mb-0 small"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+</footer>
 </html>
