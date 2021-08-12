@@ -1,6 +1,6 @@
 /* classes no bootstrap*/
 .w-1{width: 40%}
-.line{line-height: 1.8;}
+.line{}
 .h-1{height: 1%}
 .text-p{font-size: 0.8rem; margin:0;padding: 0;margin-left: 1%;}
 
@@ -25,6 +25,9 @@ header{
 .logo img{
     width:35% ;
 }
+.logo h1{
+    font-size: x-large;
+}
 .list{
     width: 60%;
 }
@@ -35,20 +38,71 @@ header{
     color: black;
 }
 
-.author img{
-    width: 80%;
-}
-#books img{
-    width: 50%;
-}
-.book img{
-    width: 70%;
-}
 .search{
-    margin-top: 5%;
+    margin-top: 3%;
+    margin-bottom: 2%;
     display: flex;
     justify-content: flex-end;
 
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    
+}
+.cards{
+    background-color: white;
+    border-radius: 5px;
+    border: 0.5px solid #e5e1eb;
+    margin-top: 0;
+    padding: 2% 4%;
+    margin-bottom: 5%;
+}
+.cards h2{
+    font-size: xX-large;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+.cards p{
+    font-size: 1.2rem;
+    line-height: 2;
+    text-align: justify;
+
+}
+.author{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.author h2{
+    font-size: xX-large;
+   
+}
+.author img{
+    width: 15%;
+    border-radius: 50%;
+}
+.poetry{
+    display: flex;
+    width: 100%;
+    background-color: #cdaef0;
+}
+.cardspoetry{
+    background-color: white;
+    border-radius: 5px;
+    border: 0.5px solid #e5e1eb;
+    margin-top: 0;
+    padding:0 4%;
+    margin-bottom: 5%;
+}
+.book{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+.book img{
+    width: 30%;
 }
 
 @media(max-width:576px){
@@ -63,7 +117,7 @@ header{
         flex-direction: row;
         align-items: flex-end;
     }
-    .logo h3{
+    .logo h1{
         font-size: large;
     }
     .list{
@@ -103,6 +157,26 @@ header{
         background-color: #cdaef0;
         border-radius: 5px;
     }
+    .cards h2{
+        font-size: larger;
+        margin-top: 5%;
+        margin-bottom:5%;
+    }
+    .cards p{
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: justify;
+    
+    }
+    .author img{
+        width: 25%;
+     
+    }
+    .author h2{
+        font-size: larger;
+       
+    }
+
 }
 
 
