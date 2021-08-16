@@ -1,0 +1,36 @@
+.bg-purple{ 
+    background-color:#6d5c81
+} 
+.add{
+    width: 50%;
+}
+.add p{
+    font-size: small;
+    padding: 0;
+    margin-bottom: 0;
+}
+.tags{
+    width: 100%;
+}
+.tags input{
+    width: 15%;
+}
+hr{
+    padding: 0;
+    color: aliceblue;
+    margin-bottom: 0;
+}
+footer p{
+    font-size: x-small;
+}
+@media(max-width:576px){
+    .add{
+        width: 90%;
+        padding: 0;
+    }
+    .add p{
+        font-size: x-small;
+    }
+    
+}
+

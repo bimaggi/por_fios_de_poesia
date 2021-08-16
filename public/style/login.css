@@ -1,0 +1,27 @@
+.bg-purple{ 
+    background-color:#6d5c81
+} 
+.w-35{ 
+    width: 350px;
+    margin-top:10%;
+    padding-bottom:0%;
+}
+
+hr{
+    padding: 0;
+    color: aliceblue;
+}
+footer p{
+    font-size: x-small;
+}
+
+
+@media(max-width:576px){
+    .w-35{
+        width:95%;   
+        margin-top:4%;
+        padding-bottom:0;     
+      
+    }
+   
+}

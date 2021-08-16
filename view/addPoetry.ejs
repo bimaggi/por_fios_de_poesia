@@ -4,61 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Poesias</title>
+    <link rel="shortcut icon" href="/favi.jpg" type="image/x-icon">
+    <title>Adicionar Poesia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
     rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/addPoetry.css">
 </head>
-
-<style>
-   .bg-purple{ background-color:#6d5c81} 
-</style>
-
 <body class="bg-dark"> 
-    <div class="container w-50 mt-4 pt-5 text-center rounded text-white">
-        <h1>Add Poetry</h1>
+    <div class=" container add mt-4 mb-2 text-center rounded text-white">
+        <h1>Adicionar Poesia</h1>
+        <p>Certifique-se se a poesia já consta no nosso banco de dados para evitar duplicidade.</p>
 
-        <form action="/admin/addPoetry" method="POST" class="d-flex flex-column ">
-            <input class="mb-3 p-2 rounded" name="title" id="title" value="<%=body.title%>" placeholder="Title">
-            <textarea class="mb-3 p-2 rounded" name="text"id="text" value="<%=body.text%> " rows="1" placeholder="Text"></textarea>
-            <input class="mb-3 p-2 rounded" name="author" id="author" value="<%=body.author%>" placeholder="Author">
+        <form action="/admin/addPoetry" method="POST" class="d-flex flex-column p-2">
+            <input class="mb-3 p-2 rounded" name="title" id="title" value="<%=body.title%>" placeholder="Titulo">
+            <textarea class="mb-3 p-2 rounded" name="text"id="text" value="<%=body.text%> " rows="1" placeholder="Texto"></textarea>
+            <input class="mb-3 p-2 rounded" name="author" id="author" value="<%=body.author%>" placeholder="Autor">
             <input class="mb-3 p-2 rounded" name="url" id="url" value="<%=body.url%>" placeholder="Url">
-            <div class= "card col-12" >
-                <div>
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+            <div class= "card col-12">
+                <p class="text-dark small mt-2">Adicione palavras-chave:</p>
+                <div class="tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
                  </div>
-                 <div>
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                 <div class="tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
                 </div>
-                <div>
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                 </div>
-                 <div>
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-2 p-2 col-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                <div class="tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                </div>
+                 <div class="tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
+                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
                 </div>
             </div>
-            <button class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" id="add">Add</button>
+            <button class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" id="add">Adicionar</button>
         </form>
     </div> 
 </body>
 <footer>
-    <hr class="mb-0 mt-5 bg-white">
-    <p class="mb-0 small"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+    <hr>
+    <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
 </footer>
 </html>

@@ -1,0 +1,31 @@
+.bg-purple{
+    background-color:#6d5c81;
+}
+hr{
+    padding: 0;
+    color: aliceblue;
+    margin-bottom: 0;
+}
+footer p{
+    font-size: x-small;
+}
+footer{
+    width: 100%;
+}
+@media(max-width:576px){
+    hr{
+        width: 100%;
+    }
+    .w-new{
+        width: 90%;
+        margin-left: 6%;
+        flex-direction: column;
+        font-size: .9rem;
+    }
+    .indice a{
+        text-align: center  ;
+    }
+    .indice h2{
+        margin-top: 0;
+    }
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favi.jpg" type="image/x-icon">
     <title>Por fios de poesia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
     rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
@@ -18,35 +19,131 @@
                 <h1>Por fios de poesia</h1>
             </div>
             <div class="list">
-                <ul class="d-flex">
+                <ul class="container">
                     <a href="#init"> <li>Inicio</li></a>
                     <a href="#author"> <li>Quem sou</li></a>
                     <a href="#books"> <li>Meus Livros</li></a>
-                    <a href="user/login"><li>Adicione poesias</li></a>
-                </ul></div>
-
+                    <a href="user/login"><li>Compartilhe sua poesia</li></a>
+                </ul>
             </div>
         </div>
     </header>
     <main class="container">
-        <form action="/search" method="get" id="searchForm">
-            <div class="container search">
-                <input type="text"name="query" placeholder="Buscar por autor ou palavra-chave"/>
-                <button type="submit">Buscar</button>
+       
+        <div class="container text" id="init">
+            <div class="cards">
+                <h2>Poesia e arte!</h2>
+                <p>A poesia vai muito além da estrutura textual de um poema, 
+                    ela não tem uma forma específica, não pode ser tocada por 
+                    nós, porém, ela nos toca e nos envolve, isso por que a poesia 
+                    é a própria emoção advinda de uma obra.</br>
+                    A sua arte pode estar carregada de poesia, e ser fonte 
+                    inspiradora para quem a lê, mesmo que não haja palavras.</br>
+                    Há poesia na dança, na pintura, na escultura, na peça de 
+                    teatro, no desenho, no cinema, na costura, na maquiagem e 
+                    mesmo no silêncio ou no vázio, encontra-se um fio de poesia.
+                </p>
+                <p><strong>Marcia Bimaggi</strong></p>
             </div>
-        </form>
-        <div class="poetry">
+            <div class="cards phrase">
+                <h2>Obras repletas de poesia</h2>
+                <div class="images">
+                    <div class="image">
+                        <img src="the_Force_of_Nature.jpg" alt="A força da natureza">
+                        <label for="The_Force_of_Nature">The Force of Nature - Lorenzo Quinn</label>
+                    </div>
+                    <div class="image">
+                        <img src="melancoly.jpg" alt="melancolia">
+                        <label for="melancoly">Melancoly - Albert György </label>
+                    </div>
+                    <div class="image">
+                        <img src="expansion.jpg" alt="meditação">
+                        <label for="expansion">Expansion - Paige Bradley </label>
+                    </div>
+                </div> 
+            </div>  
+            <div class="cards">
+                <h2>O tempo através da poesia!</h2>
+                <p>
+                    Através da poesia é possível ter uma vasta idéia sobre uma 
+                    sociedade específica, seus costumes, política, matérias-primas,
+                    relacionamentos, leis, doenças, avanços tecnológicos, enfim...
+                    A poesia aparece entre os primeiros registros  das culturas 
+                    letradas, assim como as nossas poesias sem dúvida servirão de 
+                    portais para que as futuras gerações se aproximem dos nossos 
+                    sentimentos e emoções.
+                </p>
+            </div>  
+            <div class="cards">
+                <h2>Se toca a alma, é poesia...</h2>
+                <div class="images">
+                    <div class="image"> 
+                        <img src="sulamita.jpg" alt="Sulamita">
+                        <label for="Sulamita">Sulamita - Kaká Chazz</label>
+                    </div>
+                    <div class="image">
+                        <img src="a_Persistência_da_Memória.jpg" alt="A Persistência da Memória">
+                        <label for="a_Persistência_da_Memória">A Persistência da Memória - Salvador Dalí</label>
+                    </div>
+                    <div class="image">
+                        <img src="criança_Morta.jpg" alt="Criança Morta">
+                        <label for="criança_Morta">Criança Morta - Candido Portinari </label>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+               <h2>Poesia e a ciência!</h2>
+               <p>
+                   Estudos realizados por Universidades afirmam que a poesia traz mais 
+                   benefícios que livros de auto-ajuda. Também existem estudos que asseguram 
+                   que a leitura poética auxilia no aprendizado, aumenta a criatividade das 
+                   crianças e estimula a memória nos mais idosos. </br>
+                   Penso que de fato não possa ser o contrário, pois como mencionei acima,
+                   poesia é o próprio sentimento encontrado na arte, e a arte cura, resgata, recupera,
+                   transforma, colore, ilumina, eleva a auto-estima, alegra, afaga, aviva o coração de
+                   quem por ela se deixa tocar.
+               </p>
+            </div>  
+            <div class="cards">
+                <h2>Criamos arte, e ela se faz poesia</h2>
+                <div class="images">
+                    <div class="image">
+                        <img src="bolos.jpg" alt="bolos">
+                        <label for="bolos">Noivos - Clairella Cakes / Gotico - Geek Hours </label>
+                    </div> 
+                    <div class="image">
+                        <img src="croqui_Conrado.jpg" alt="croqui_Conrado">
+                        <label for="croqui_Conrado">Croqui - Conrado Segreto</label>
+                    </div> 
+                    <div class="image">
+                        <img src="narciso.jpg" alt="Narciso">
+                        <label for="narciso">Narciso - Vik Muniz</label>
+                    </div>
+                </div>
+            </div>
+        </div>  
+       
+         <form action="/search" method="get" id="searchForm">
+            <h2>E agora vamos viajar pelo universo das obras escritas</h2>
+            <div class="container search">
+                 <input type="text"name="query" placeholder="Buscar por autor ou palavra-chave"/>
+                 <button type="submit">Buscar</button>
+             </div>
+         </form>
+       
+       
+        <div class="container poetry">
             <%
              if(results){
                 if(list.length > 0){
              %>
-             <p><strong>Resultados da pesquisa por <%=search%>:</strong></p>
+             <p><strong>Resultados da pesquisa por: <%=search%></strong></p>
              <div class="cardspoetry" style="white-space: pre-wrap">
                 <%list.forEach(function(item){%>
                    <h2><%=item.title%></h2>
-                   <div><%=item.text%></div>
-                   <div><strong><%=item.author%></strong></div>
-                   <div><a href="<%=item.url%>" target="_blank"><%=item.url%></a></div>
+                   <div class="item"><%=item.text%></div>
+                   <div class="aut"><strong><%=item.author%></strong></div>
+                   <div class="url""><a href="<%=item.url%>" target="_blank"><%=item.url%></a></div>
                 <%})%>
 				</div>
             	<div  class="book">
@@ -64,53 +161,12 @@
             	<% } 
             }%>
         </div>
-        <div class="container text">
-            <div class="cards">
-                <h2>Poesia e arte!</h2>
-                <p>A poesia vai muito além da estrutura textual de um poema, 
-                    ela não tem uma forma específica, não pode ser tocada por 
-                    nós, porém, ela nos toca e nos envolve, isso por que a poesia 
-                    é a própria emoção advinda de uma obra.</br>
-                    A sua arte pode estar carregada de poesia, e ser fonte 
-                    inspiradora para quem a lê, mesmo que não haja palavras.</br>
-                    Há poesia na dança, na pintura, na escultura, na peça de 
-                    teatro, no desenho, no cinema, na costura, na maquiagem e 
-                    mesmo no silêncio ou no vázio, encontra-se um fio de poesia.
-                </p>
-                <p><strong>Marcia Bimaggi</strong></p>
-            </div>
-            <div class="cards">
-                <h2>O tempo através da poesia!</h2>
-                <p>
-                    Através da poesia é possível ter uma vasta idéia sobre uma 
-                    sociedade específica, seus costumes, política, matérias-primas,
-                    relacionamentos, leis, doenças, avanços tecnológicos, enfim...
-                    A poesia aparece entre os primeiros registros  das culturas 
-                    letradas, assim como as nossas poesias sem dúvida servirão de 
-                    portais para que as futuras gerações se aproximem dos nossos 
-                    sentimentos e emoções.
-                </p>
-            </div>    
-            <div class="cards">
-               <h2>Poesia e a ciência!</h2>
-               <p>
-                   Estudos realizados por Universidades afirmam que a poesia traz mais 
-                   benefícios que livros de auto-ajuda. Também existem estudos que asseguram 
-                   que a leitura poética auxilia no aprendizado, aumenta a criatividade das 
-                   crianças e estimula a memória nos mais idosos. </br>
-                   Penso que de fato não possa ser o contrário, pois como mencionei acima,
-                   poesia é o próprio sentimento encontrado na arte, e a arte cura, resgata, recupera,
-                   transforma, colore, ilumina, eleva a auto-estima, alegra, afaga, aviva o coração de
-                   quem por ela se deixa tocar.
-               </p>
-            </div>   
-        </div>         
-        <div class="container">
+        <div class="container" id="author">
             <div class="author">
                 <img src="/marcia.jpg" >
                 <h2 class="mb-3">Marcia Bimaggi</h2>
             </div>
-            <div class="cards bg-white">
+            <div class="cards">
                 <p>            
                     Através da escrita encontrei uma porta para expressar minha visão do mundo, 
                     meus desabafos, meus sentimentos, minha imaginação, minha arte e aprendi a 
@@ -124,8 +180,9 @@
             </div>
         </div>
 
-        <div id="books" class="container d-sm-flex justify-content-between text-center mt-2">
-            <div class="">
+        <div class="container books" id="books">
+            
+            <div>
                 <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
                 <p><strong>Versão impressa</strong></p>
             </div>
@@ -142,24 +199,24 @@
                 <p><strong>Versão Digital</strong></p>
             </div>
         </div>
-        <div class="text-center mt-4 d-flex flex-column">
-            <a href="https://api.whatsapp.com/send?l=pt_BR&phone= 5511954001878 & text= Olá gostaria de adquir um de seus livros//tenho interesse em divulgar minas poesias " target="_blank" class="text-decoration-none">
+        <div class="contact">
+            <a href="https://api.whatsapp.com/send?l=pt_BR&phone= 5511954001878 & text= Olá gostaria de adquir um de seus livros//tenho interesse em divulgar minas poesias " target="_blank">
                 <img src="/whatsapp.png" alt=" Chamar no whatsapp" >
                      Entrar em contato
              </a>
-             <a href="mailto:porfiosdepoesia@gmail.com" class="text-decoration-none justify-content-center">
+             <a href="mailto:porfiosdepoesia@gmail.com">
                 <strong>Email:</strong>porfiosdepoesia@gmail.com
             </a>
         </div>     
     </main>
-    <hr class="mb-0 mt-0"> 
+    <hr> 
     <footer>
-        <p class="mb-0"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-dark text-p" target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+        <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/" target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
         <div class="container">
-            <ul class="navbar-nav w-25 d-flex flex-row m-auto">
-                <li class="nav-item"><a href="https://www.instagram.com/porfiosdepoesia/"target="_blank" class="nav-link text-white"><img src="/instagram.png"class="w-1"></a></li>
-                <li class="nav-item"><a href="https://www.facebook.com/porfiosdepoesias/"target="_blank" class="nav-link text-white"><img src="/facebook.png"class="w-1 "></a></li>
-                <li class="nav-item"><a href="https://www.youtube.com/c/porfiosdepoesia" target="_blank" class="nav-link text-white"><img src="/youtube.png"class="w-1"></a></li>
+            <ul>
+                <li><a href="https://www.instagram.com/porfiosdepoesia/"target="_blank"><img src="/instagram.png"></a></li>
+                <li><a href="https://www.facebook.com/porfiosdepoesias/"target="_blank"><img src="/facebook.png"></a></li>
+                <li><a href="https://www.youtube.com/c/porfiosdepoesia" target="_blank"><img src="/youtube.png"></a></li>
             </ul>
         </div>
     </footer>

@@ -4,25 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <link rel="shortcut icon" href="/favi.jpg" type="image/x-icon">
+    <title>Criar conta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
     rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/register.css">
 </head>
-
-<style>
-    .bg-purple{ background-color:#6d5c81} 
-    .w-35{ width: 400px}
-    .font{ font-size: .7rem;}
- </style>
-
 <body class="bg-dark">
-    <div class="container w-35 mt-5 pt-5 text-center rounded text-white">
-        <h1 class="mt-5 pt-2 mb-3">Create account</h1>
+    <div class="container w-35 text-center rounded text-white">
+        <h1 class="mt-5 pt-2 mb-3">Criar conta</h1>
         <form action="/user/register" method="POST" class="d-flex flex-column ">
-            <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Name">
+            <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Nome">
             <input class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
-            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Password min 6 characters">
+            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Senha min 6 caracteres">
             <div class="d-flex">
                 <div>
                     <input type="checkbox" name="privacity" id="privacity" required>
@@ -33,13 +28,13 @@
                     publicar poesias, poemas e urls de minha autoria, ou poesias, poemas e urls aos quais tenho autorização para divulgar.</p></br>
                 </div>
             </div>  
-            <button class="btn mt-1 mb-4 p-2  bg-purple text-white rounded">Register</button>
+            <button class="btn mt-1 mb-4 p-2  bg-purple text-white rounded">Salvar</button>
         </form>
-        <p class="text-light small pb-3">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
+        <p class="text-light small pb-5 mb-4">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
     </div>
 </body>
 <footer>
-    <hr class="mb-0 mt-5 bg-white">
-    <p class="mb-0 small"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+    <hr>
+    <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
 </footer>
 </html>

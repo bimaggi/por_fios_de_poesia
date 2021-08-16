@@ -4,38 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todas as poesias</title>
+    <link rel="shortcut icon" href="/favi.jpg" type="image/x-icon">
+    <title>Minhas poesias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
     rel="stylesheet"integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/allPoetry.css">
 </head>
-
-<style>
-    .bg-purple{background-color:#6d5c81};
-</style>
-
 <body class="bg-dark">
     <div class="container w-75 p-5 mt-4">
-        <div class="">
-            <a href="/admin/addPoetry" class="text-muted"><h4>Add Poetry</h4></a>
-            <a href="/" class="text-muted"><h4>Home</h4></a>
+        <div class= indice>
+            <a href="/admin/addPoetry" class="text-muted"><h2>Add Poesia</h2></a>
+            <a href="/" class="text-muted"><h2>Fechar</h2></a>
         </div>
         
         <%for(let i= 0; i < poetry.length; i++){%>
-            <div id="<%=poetry[i]._id%>" class="mt-5 m-auto">
-                <form method="POST" action="/admin/allPoetry/<%=poetry[i]._id%>?_method=DELETE" class="mt-2 d-flex align-items-center justify-content-between " >
+            <div id="<%=poetry[i]._id%>" class=" mt-5 m-auto">
+                <form method="POST" action="/admin/allPoetry/<%=poetry[i]._id%>?_method=DELETE" class="mt-2 d-flex w-new align-items-center justify-content-between " >
 
-                    <div class="d-flex flex-column p-2" style="white-space: pre-wrap">
+                    <div class="d-flex flex-column" style="white-space: pre-wrap">
                         <h2 class="text-white mb-3"><%=poetry[i].title%></h2>
-                        <div class="text-white mb-3" ><%=poetry[i].text%></div>
+                        <div class="text-white mb-3"><%=poetry[i].text%></div>
                         <div class="text-light"><%=poetry[i].author%></div>
                         <div class="text-muted"><%=poetry[i].url%></div>
                         <div class="text-muted"><%=poetry[i].post_by%></div>
                     </div>
-                    <div class="d-flex flex-column p-1">
+                    <div class="d-flex flex-column">
                         <input class="bg-purple text-light mb-2 invisible "name="id" value="<%=poetry[i]._id%>">
-                        <button class="btn bg-purple text-light mb-2" type="submit" >Delete</button>
-                        <a href="/admin/editPoetry/<%=poetry[i]._id%>" class="btn mb-1 bg-purple text-light">Edit</a>
+                        <button class="btn bg-purple text-light mb-2" type="submit" >Deletar</button>
+                        <a href="/admin/editPoetry/<%=poetry[i]._id%>" class="btn mb-1 bg-purple text-light">Editar</a>
                     </div>
                 </form>
             </div>
@@ -43,7 +40,7 @@
     </div>
 </body>
 <footer>
-    <hr class="mb-0 mt-5 bg-white">
-    <p class="mb-0 small"><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
+    <hr>
+    <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
 </footer>
 </html>
