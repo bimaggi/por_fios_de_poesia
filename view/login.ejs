@@ -13,14 +13,18 @@
 </head>
 
 <body class="bg-dark">
+   
     <div class="container w-35 text-center rounded text-white">
-        <h1 class="mt-5 pt-4 mb-3">Login</h1>
-        <form class="d-flex flex-column pb-5" >
-            <input class="mb-3 p-2 rounded" id="email" name="email" value="<%=body.email%>" placeholder="Email">
+        <div class="logo">
+            <img src="/logo.jpg">
+            <h1>Por fios de poesia </h1>
+        </div>
+        <form class="d-flex flex-column pb-4" >
+            <input type="email" class="mb-3 p-2 rounded" id="email" name="email" value="<%=body.email%>" placeholder="Email">
             <input class="mb-3 p-2 rounded" id="password" name="password" value="<%=body.password%>" placeholder="Senha">
             <button type="submit" class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" id="login" >Login</button>
-            <p ></p><a href="register" class="text-decoration-none text-muted" >Criar conta</a></p>
-            <p class="pb-4"><a href="#" class="text-decoration-none text-muted">Esqueceu sua senha ?</a></p>
+            <p><a href="register" class="text-decoration-none text-muted" >Criar conta</a></p>
+            <p><a href="#" class="text-decoration-none text-muted">Esqueceu sua senha ?</a></p>
         </form>
     </div>
     <script>

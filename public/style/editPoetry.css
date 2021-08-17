@@ -4,6 +4,23 @@
 .edit{
     width: 45%;
 }
+.logo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+}
+.logo img{
+    width:20% ;
+    border-radius: 50%;
+    margin: auto;
+}
+.logo h1{
+    font-size: x-large;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
 .tags{
     width: 100%;
 }
@@ -18,10 +35,16 @@ hr{
 footer p{
     font-size: x-small;
 }
-@media(max-width:576px){
+@media(max-width:768px){
    .edit{
         width: 95%;
-        padding-top: 2%;
+    }
+    .logo img{
+        width: 25%;
+        margin-top: 4%;
+    }
+    .logo h1{
+        font-size: 1.3rem;
     }
     
 }

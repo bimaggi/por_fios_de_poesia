@@ -13,8 +13,10 @@
 </head>
 <body class="bg-dark">
     <div class="edit container mt-0 p-1 text-center rounded text-white">
-        <h1 class="pt-1">Editar Poesia</h1>
-       
+        <div class="logo">
+            <img src="/logo.jpg">
+            <h1>Por fios de poesia </h1>
+        </div>
         <form action="/admin/editPoetry/<%=body.id%>" method="POST" class="d-flex flex-column p-2 ">
             <input class="mb-3 p-2 rounded" name="title" value="<%=body.title%>" placeholder="Titulo">
             <textarea class="mb-3 p-2 rounded" name="text" value="<%=body.text%>" placeholder="Texto" rows="5"><%=body.text%></textarea>

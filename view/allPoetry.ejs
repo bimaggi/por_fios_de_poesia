@@ -12,17 +12,21 @@
     <link rel="stylesheet" href="/style/allPoetry.css">
 </head>
 <body class="bg-dark">
-    <div class="container w-75 p-5 mt-4">
+    <div class="container w-new">
+        <div class="logo">
+            <img src="/logo.jpg">
+            <h1>Por fios de poesia </h1>
+        </div>
         <div class= indice>
-            <a href="/admin/addPoetry" class="text-muted"><h2>Add Poesia</h2></a>
-            <a href="/" class="text-muted"><h2>Fechar</h2></a>
+            <h2><a href="/admin/addPoetry" class="text-muted">Add Poesia</a></h2>
+            <h2><a href="/" class="text-muted">Fechar</a></h2>
         </div>
         
         <%for(let i= 0; i < poetry.length; i++){%>
             <div id="<%=poetry[i]._id%>" class=" mt-5 m-auto">
                 <form method="POST" action="/admin/allPoetry/<%=poetry[i]._id%>?_method=DELETE" class="mt-2 d-flex w-new align-items-center justify-content-between " >
 
-                    <div class="d-flex flex-column" style="white-space: pre-wrap">
+                    <div class="d-flex flex-column text" style="white-space: pre-wrap">
                         <h2 class="text-white mb-3"><%=poetry[i].title%></h2>
                         <div class="text-white mb-3"><%=poetry[i].text%></div>
                         <div class="text-light"><%=poetry[i].author%></div>

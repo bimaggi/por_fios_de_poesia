@@ -13,9 +13,11 @@
 </head>
 <body class="bg-dark"> 
     <div class=" container add mt-4 mb-2 text-center rounded text-white">
-        <h1>Adicionar Poesia</h1>
-        <p>Certifique-se se a poesia já consta no nosso banco de dados para evitar duplicidade.</p>
-
+        <div class="logo">
+            <img src="/logo.jpg">
+            <h1>Por fios de poesia </h1>
+        </div>
+        <p>Para evitar duplicidade, verifique se a poesia já foi cadastrada no nosso banco de dados.</p>
         <form action="/admin/addPoetry" method="POST" class="d-flex flex-column p-2">
             <input class="mb-3 p-2 rounded" name="title" id="title" value="<%=body.title%>" placeholder="Titulo">
             <textarea class="mb-3 p-2 rounded" name="text"id="text" value="<%=body.text%> " rows="1" placeholder="Texto"></textarea>

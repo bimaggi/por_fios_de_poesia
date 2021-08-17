@@ -1,6 +1,30 @@
 .bg-purple{
     background-color:#6d5c81;
 }
+.w-new{
+    width: 100%;
+    margin-top: 2%;
+}
+.logo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+}
+.logo img{
+    width:11% ;
+    border-radius: 50%;
+    margin: auto;
+}
+.logo h1{
+    font-size: x-large;
+    margin: auto;
+    margin-bottom: 4%;
+}
+.indice h2{
+    font-size: 1.8rem;
+}
 hr{
     padding: 0;
     color: aliceblue;
@@ -12,20 +36,35 @@ footer p{
 footer{
     width: 100%;
 }
-@media(max-width:576px){
-    hr{
-        width: 100%;
-    }
+
+
+@media(max-width:768px){
     .w-new{
-        width: 90%;
-        margin-left: 6%;
         flex-direction: column;
         font-size: .9rem;
+        margin-top: 5%;
     }
-    .indice a{
-        text-align: center  ;
+    .logo{
+        width: 100%;
+        color: white;
+    }
+    .logo img{
+        width: 25%;
+    }
+    .logo h1{
+        margin-bottom: 10%;
+        font-size: 1.3rem;
     }
     .indice h2{
         margin-top: 0;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .text{
+        width: 80%;
+        margin: auto;
+    }
+    hr{
+        width: 100%;
     }
 }

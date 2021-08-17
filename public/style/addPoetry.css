@@ -9,6 +9,23 @@
     padding: 0;
     margin-bottom: 0;
 }
+.logo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+}
+.logo img{
+    width:20% ;
+    border-radius: 50%;
+    margin: auto;
+}
+.logo h1{
+    font-size: x-large;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
 .tags{
     width: 100%;
 }
@@ -23,13 +40,20 @@ hr{
 footer p{
     font-size: x-small;
 }
-@media(max-width:576px){
+@media(max-width:768px){
     .add{
         width: 90%;
         padding: 0;
     }
     .add p{
         font-size: x-small;
+    }
+    .logo img{
+        width:25% ;
+       
+    }
+    .logo h1{
+        font-size: 1.3rem;
     }
     
 }

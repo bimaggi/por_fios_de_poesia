@@ -13,10 +13,13 @@
 </head>
 <body class="bg-dark">
     <div class="container w-35 text-center rounded text-white">
-        <h1 class="mt-5 pt-2 mb-3">Criar conta</h1>
+        <div class="logo">
+            <img src="/logo.jpg">
+            <h1>Por fios de poesia </h1>
+        </div>
         <form action="/user/register" method="POST" class="d-flex flex-column ">
             <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Nome">
-            <input class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
+            <input type="email" class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
             <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Senha min 6 caracteres">
             <div class="d-flex">
                 <div>
@@ -30,7 +33,7 @@
             </div>  
             <button class="btn mt-1 mb-4 p-2  bg-purple text-white rounded">Salvar</button>
         </form>
-        <p class="text-light small pb-5 mb-4">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
+        <p class="text-light small pb-4 mb-4">Para saber mais consulte a nossa <a href="/privicyPolicy" class=" text-muted" target="_blank">Política de Privacidade.</a></p>
     </div>
 </body>
 <footer>
