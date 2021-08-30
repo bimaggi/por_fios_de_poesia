@@ -15,7 +15,7 @@
     <header>
         <div class="container menu">
             <div class=" logo">
-                <img src="/logo.jpg">
+                <img src="images/logo.jpg">
                 <h1>Por fios de poesia</h1>
             </div>
             <div class="list">
@@ -29,6 +29,42 @@
         </div>
     </header>
     <main class="container">
+
+        <form action="/search" method="get" id="searchForm">
+            <div class="container search">
+                 <input type="text"name="query" placeholder="Buscar por autor ou palavra-chave"/>
+                 <button type="submit">Buscar</button>
+             </div>
+         </form>
+        <div class="container poetry">
+            <%
+             if(results){
+                if(list.length > 0){
+             %>
+             <p><strong>Resultados da pesquisa por: <%=search%></strong></p>
+             <div class="cardspoetry" style="white-space: pre-wrap">
+                <%list.forEach(function(item){%>
+                   <h2><%=item.title%></h2>
+                   <div class="item"><%=item.text%></div>
+                   <div class="aut"><strong><%=item.author%></strong></div>
+                   <div class="url""><a href="<%=item.url%>" target="_blank"><%=item.url%></a></div>
+                <%})%>
+				</div>
+            	<div  class="book">
+            	    <div>
+            	        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="images/florirPorFiosDePoesia.jpg"></a>
+            	        <p><strong>Versão impressa</strong></p>
+            	    </div>
+            	    <div>
+            	        <a href="#"><img src="images/poesiaDeTerreiro.jpg"></a>
+            	        <p><strong>Versão Impressa</strong></p>
+            	    </div>
+            	</div>
+            	<%}else{%>
+                	<b>Nenhum resultado encontrado para "<%=search%>"</b>
+            	<% } 
+            }%>
+        </div>
        
         <div class="container text" id="init">
             <div class="cards">
@@ -49,15 +85,15 @@
                 <h2>Obras repletas de poesia</h2>
                 <div class="images">
                     <div class="image">
-                        <img src="the_Force_of_Nature.jpg" alt="A força da natureza">
+                        <img src="images/the_Force_of_Nature.jpg" alt="A força da natureza">
                         <label for="The_Force_of_Nature">The Force of Nature - Lorenzo Quinn</label>
                     </div>
                     <div class="image">
-                        <img src="melancoly.jpg" alt="melancolia">
+                        <img src="images/melancoly.jpg" alt="melancolia">
                         <label for="melancoly">Melancoly - Albert György </label>
                     </div>
                     <div class="image">
-                        <img src="expansion.jpg" alt="meditação">
+                        <img src="images/expansion.jpg" alt="meditação">
                         <label for="expansion">Expansion - Paige Bradley </label>
                     </div>
                 </div> 
@@ -78,15 +114,15 @@
                 <h2>Se toca a alma, é poesia...</h2>
                 <div class="images">
                     <div class="image"> 
-                        <img src="sulamita.jpg" alt="Sulamita">
+                        <img src="images/sulamita.jpg" alt="Sulamita">
                         <label for="Sulamita">Sulamita - Kaká Chazz</label>
                     </div>
                     <div class="image">
-                        <img src="a_Persistência_da_Memória.jpg" alt="A Persistência da Memória">
+                        <img src="images/a_Persistência_da_Memória.jpg" alt="A Persistência da Memória">
                         <label for="a_Persistência_da_Memória">A Persistência da Memória - Salvador Dalí</label>
                     </div>
                     <div class="image">
-                        <img src="criança_Morta.jpg" alt="Criança Morta">
+                        <img src="images/criança_Morta.jpg" alt="Criança Morta">
                         <label for="criança_Morta">Criança Morta - Candido Portinari </label>
                     </div>
                 </div>
@@ -108,62 +144,25 @@
                 <h2>Criamos arte, e ela se faz poesia</h2>
                 <div class="images">
                     <div class="image">
-                        <img src="bolos.jpg" alt="bolos">
+                        <img src="images/bolos.jpg" alt="bolos">
                         <label for="bolos">Noivos - Clairella Cakes / Gotico - Geek Hours </label>
                     </div> 
                     <div class="image">
-                        <img src="croqui_Conrado.jpg" alt="croqui_Conrado">
+                        <img src="images/croqui_Conrado.jpg" alt="croqui_Conrado">
                         <label for="croqui_Conrado">Croqui - Conrado Segreto</label>
                     </div> 
                     <div class="image">
-                        <img src="narciso.jpg" alt="Narciso">
+                        <img src="images/narciso.jpg" alt="Narciso">
                         <label for="narciso">Narciso - Vik Muniz</label>
                     </div>
                 </div>
             </div>
         </div>  
        
-         <form action="/search" method="get" id="searchForm">
-            <h2>E agora vamos viajar pelo universo das obras escritas</h2>
-            <div class="container search">
-                 <input type="text"name="query" placeholder="Buscar por autor ou palavra-chave"/>
-                 <button type="submit">Buscar</button>
-             </div>
-         </form>
-       
-       
-        <div class="container poetry">
-            <%
-             if(results){
-                if(list.length > 0){
-             %>
-             <p><strong>Resultados da pesquisa por: <%=search%></strong></p>
-             <div class="cardspoetry" style="white-space: pre-wrap">
-                <%list.forEach(function(item){%>
-                   <h2><%=item.title%></h2>
-                   <div class="item"><%=item.text%></div>
-                   <div class="aut"><strong><%=item.author%></strong></div>
-                   <div class="url""><a href="<%=item.url%>" target="_blank"><%=item.url%></a></div>
-                <%})%>
-				</div>
-            	<div  class="book">
-            	    <div>
-            	        <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
-            	        <p><strong>Versão impressa</strong></p>
-            	    </div>
-            	    <div>
-            	        <a href="#"><img src="/poesiaDeTerreiro.jpg"></a>
-            	        <p><strong>Versão Impressa</strong></p>
-            	    </div>
-            	</div>
-            	<%}else{%>
-                	<b>Nenhum resultado encontrado para "<%=search%>"</b>
-            	<% } 
-            }%>
-        </div>
+         
         <div class="container" id="author">
             <div class="author">
-                <img src="/marcia.jpg" >
+                <img src="images/marcia.jpg" >
                 <h2 class="mb-3">Marcia Bimaggi</h2>
             </div>
             <div class="cards">
@@ -182,41 +181,44 @@
 
         <div class="container books" id="books">
             
-            <div>
-                <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
+            <div class="img1"> 
+                <a href="https://clubedeautores.com.br/livro/florir-por-fios-de-poesia"target="_blank"><img src="images/florirPorFiosDePoesia.jpg"></a>
                 <p><strong>Versão impressa</strong></p>
             </div>
-            <div>
-                <a href="#"><img src="/poesiaDeTerreiro.jpg"></a>
+            <div class="img2">
+                <a href="#"><img src="images/poesiaDeTerreiro.jpg"></a>
                 <p><strong>Versão Impressa</strong></p>
             </div>
-            <div>
-                <a href="https://hotmart.com/product/florir-por-fios-de-poesia/D46087075T"target="_blank"><img src="/florirPorFiosDePoesia.jpg"></a>
+            <div class="img1">
+                <a href="https://hotmart.com/product/florir-por-fios-de-poesia/D46087075T"target="_blank"><img src="images/florirPorFiosDePoesia.jpg"></a>
                 <p><strong>Versão digital</strong></p>
             </div>
-            <div>
-                <a href="#"><img src="/poesiaDeTerreiro.jpg"></a>
+            <div class="img2">
+                <a href="#"><img src="images/poesiaDeTerreiro.jpg"></a>
                 <p><strong>Versão Digital</strong></p>
             </div>
         </div>
         <div class="contact">
+            <a href="/termOfUse">Termo de uso</a>
+            <a href="/privicyPolicy">Politica de privacidade</a>
             <a href="https://api.whatsapp.com/send?l=pt_BR&phone= 5511954001878 & text= Olá gostaria de adquir um de seus livros//tenho interesse em divulgar minas poesias " target="_blank">
-                <img src="/whatsapp.png" alt=" Chamar no whatsapp" >
-                     Entrar em contato
-             </a>
-             <a href="mailto:porfiosdepoesia@gmail.com">
-                <strong>Email:</strong>porfiosdepoesia@gmail.com
+            <img src="images/whatsapp.png" alt=" Chamar no whatsapp" >
+                Entrar em contato
             </a>
-        </div>     
+            <a href="mailto:porfiosdepoesia@gmail.com">
+            <strong></strong>porfiosdepoesia@gmail.com
+            </a>
+            <a href="#init">Voltar ao Início</a>
+        </div>  
     </main>
     <hr> 
     <footer>
         <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/" target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
         <div class="container">
             <ul>
-                <li><a href="https://www.instagram.com/porfiosdepoesia/"target="_blank"><img src="/instagram.png"></a></li>
-                <li><a href="https://www.facebook.com/porfiosdepoesias/"target="_blank"><img src="/facebook.png"></a></li>
-                <li><a href="https://www.youtube.com/c/porfiosdepoesia" target="_blank"><img src="/youtube.png"></a></li>
+                <li><a href="https://www.instagram.com/porfiosdepoesia/"target="_blank"><img src="images/instagram.png"></a></li>
+                <li><a href="https://www.facebook.com/porfiosdepoesias/"target="_blank"><img src="images/facebook.png"></a></li>
+                <li><a href="https://www.youtube.com/c/porfiosdepoesia" target="_blank"><img src="images/youtube.png"></a></li>
             </ul>
         </div>
     </footer>
