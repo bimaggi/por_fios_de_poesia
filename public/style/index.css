@@ -262,17 +262,14 @@ footer img{
         font-size: 1rem;
         line-height: 1.8;
         text-align: justify;
-    
     }
     .author img{
         margin-top: 5%;
         width: 30%;
-     
     }
     .author h2{
         font-size: larger;
     }
-
     .poetry{
         flex-direction: column;
         padding:;
@@ -302,7 +299,7 @@ footer img{
         padding: 0;
     }
     .books img{
-        width: 70%;
+        width: 65%;
     }
     .img1{
         width: 65%;
@@ -320,7 +317,6 @@ footer img{
     }
     .contact a{
         font-size: 1rem;
-        
     }
     .contact img{
         width: 8%;
@@ -350,10 +346,6 @@ footer img{
     .image img{
         width: 100%;
     }
-    
-    
-
-
 }
 
 

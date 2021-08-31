@@ -2,8 +2,11 @@
     background-color:#6d5c81;
 }
 .w-new{
-    width: 100%;
+    max-width: 100%;
     margin-top: 2%;
+    word-wrap: break-word;
+    padding: 2%;
+
 }
 .logo{
     width: 100%;
@@ -24,6 +27,7 @@
 }
 .indice h2{
     font-size: 1.8rem;
+    margin-left: 2%;
 }
 hr{
     padding: 0;
@@ -43,6 +47,7 @@ footer{
         flex-direction: column;
         font-size: .9rem;
         margin-top: 5%;
+        padding: .8%;
     }
     .logo{
         width: 100%;
@@ -67,4 +72,5 @@ footer{
     hr{
         width: 100%;
     }
+    
 }

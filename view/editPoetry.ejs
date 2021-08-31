@@ -22,37 +22,8 @@
             <textarea class="mb-3 p-2 rounded" name="text" value="<%=body.text%>" placeholder="Texto" rows="5"><%=body.text%></textarea>
             <input class="mb-3 p-2 rounded" name="author" value="<%=body.author%>" placeholder="Autor">
             <input class="mb-3 p-2 rounded" name="url" value="<%=body.url%>" placeholder="Url">
-            
-            <div class= "card col-12" >
-                <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[0]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[1]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[2]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[3]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[4]%>" placeholder="Tags">
-                </div>
-                <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[5]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[6]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[7]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[8]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[9]%>" placeholder="Tags">
-                </div>
-                <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[10]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[11]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[12]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[13]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[14]%>" placeholder="Tags">
-                 </div>
-                 <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[15]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[16]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[17]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[18]%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags[19]%>" placeholder="Tags">
-                </div>
-            </div>
+            <p>Mantenha a virgula ( , ) após cada palavra-chave</p>
+            <textarea class="mb-1 p-2 mt-0 rounded" rows="2" name="tags" value="<%=body.tags%>" placeholder="Tags"><%=body.tags%></textarea>
             <button class="btn mt-3 p-2 bg-purple text-white rounded">Editar</button>
         </form>
     </div>

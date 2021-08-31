@@ -1,0 +1,21 @@
+.w-new{
+    width: 80%;
+}
+@media(max-width:768px){
+    .w-new{
+        width: 90%;
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+    }
+    .w-new h1{
+        font-size: 1.5rem;
+    }
+    .w-new h2{
+        font-size: 1.1rem;
+    }
+
+    footer{
+        font-size: X-small;
+
+    }
+}

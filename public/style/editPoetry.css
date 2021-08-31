@@ -21,11 +21,9 @@
     margin-top: 2%;
     margin-bottom: 5%;
 }
-.tags{
-    width: 100%;
-}
-.tags input{
-    width: 15%;
+p{
+    margin-bottom: 0.5%;
+    font-size: small;
 }
 hr{
     padding: 0;

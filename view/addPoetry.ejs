@@ -20,40 +20,11 @@
         <p>Para evitar duplicidade, verifique se a poesia já foi cadastrada no nosso banco de dados.</p>
         <form action="/admin/addPoetry" method="POST" class="d-flex flex-column p-2">
             <input class="mb-3 p-2 rounded" name="title" id="title" value="<%=body.title%>" placeholder="Titulo">
-            <textarea class="mb-3 p-2 rounded" name="text"id="text" value="<%=body.text%> " rows="1" placeholder="Texto"></textarea>
+            <textarea class="mb-3 p-2 rounded" name="text"id="text" value="<%=body.text%> " rows="5" placeholder="Texto"></textarea>
             <input class="mb-3 p-2 rounded" name="author" id="author" value="<%=body.author%>" placeholder="Autor">
             <input class="mb-3 p-2 rounded" name="url" id="url" value="<%=body.url%>" placeholder="Url">
-            <div class= "card col-12">
-                <p class="text-dark small mt-2">Adicione palavras-chave:</p>
-                <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <!-- <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                 </div>
-                 <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                </div>
-                <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                </div>
-                 <div class="tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                    <input class="mb-1 m-1 p-2 rounded" name="tags" value="<%=body.tags%>" placeholder="Tags">
-                 --></div>
-            </div>
+            <p class="text-white small mt-2" >Adicione palavras-chave e insira uma virgula( , ) após cada palavra</p>
+            <textarea class="mb-3 p-2 rounded" rows="2" name="tags" value="<%=body.tags%>" placeholder="T ags"></textarea>
             <button class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" id="add">Adicionar</button>
         </form>
     </div> 
