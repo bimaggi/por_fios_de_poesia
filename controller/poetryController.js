@@ -12,7 +12,7 @@ const addPoetry = async(req, res)=>{
         title: req.body.title,
         text: req.body.text,
         author: req.body.author,
-        tags: req.body.tags.split(';'),
+        tags: req.body.tags.split(','),
         url: req.body.url,
         post_by: req.user.email
     })

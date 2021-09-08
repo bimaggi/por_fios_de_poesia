@@ -24,7 +24,7 @@
             <input class="mb-3 p-2 rounded" id="password" name="password" value="<%=body.password%>" placeholder="Senha">
             <button type="submit" class="btn mt-3 mb-4 p-2 bg-purple text-white rounded" id="login" >Login</button>
             <p><a href="register" class="text-decoration-none text-muted" >Criar conta</a></p>
-            <p><a href="#" class="text-decoration-none text-muted">Esqueceu sua senha ?</a></p>
+            <p><a href="/resetPassword/forgot" class="text-decoration-none text-muted">Esqueceu sua senha ?</a></p>
         </form>
     </div>
     <script>
@@ -42,7 +42,7 @@
         };
         //console.log('esse é o options',options)
 
-        fetch("http://localhost:3000/user/login", options).then((http) => {          
+        fetch(`${process.env.BASE_URL}/user/login`, options).then((http) => {          
             const new_token = http.headers.get("authorization-token");          
             // Aqui eu vejo o valor do headers passado pelo back          
             //console.log("esse é o new token",new_token);          

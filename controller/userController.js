@@ -24,8 +24,6 @@ const register = async(req,res)=>{
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password)
     })
-    
-
     try{
         let savedUser = await user.save()
         res.redirect('/user/login')

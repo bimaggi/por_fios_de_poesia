@@ -7,8 +7,9 @@ dotenv.config();
 const homePageRouter = require('./routes/homePageRouter')
 const userRouter = require('./routes/userRouter')
 const privicyRouter = require('./routes/privicyRouter')
-const poetryRouter = require('./routes/poetryRouter');
+const poetryRouter = require('./routes/poetryRouter')
 const termOfUseRouter = require ('./routes/termOfUseRouter')
+const resetPasswordRouter = require('./routes/resetPasswordRouter')
 
 const validateCookie = require('./controller/validateCookie')
 const cookieParser = require('cookie-parser')
@@ -34,6 +35,6 @@ app.use('/',homePageRouter);
 app.use('/user',userRouter);
 app.use('/privicyPolicy',privicyRouter);
 app.use('/admin',validateCookie,poetryRouter);
-app.use('/termOfUse',termOfUseRouter)
-
+app.use('/termOfUse',termOfUseRouter);
+app.use('/resetPassword', resetPasswordRouter);
 app.listen(process.env.PORT,()=>{ console.log('Server Running')});

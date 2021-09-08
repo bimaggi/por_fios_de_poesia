@@ -16,9 +16,9 @@ const renderSearch = async(req,res)=>{
     try{
         let docs = await Poetry.find({
             $or: [
-                { tags:{$regex: search, $options: '-i'}},
-                { author: {$regex: search, $options: '-i' } },
-                { title: {$regex: search,$options: '-i' } }
+                { tags:{$regex:search, $options: '-i'}},
+                { author:{$regex:search, $options: '-i' }},
+                { title:{$regex:search, $options: '-i' }}
             ],
         })
         res.render('index', { 
