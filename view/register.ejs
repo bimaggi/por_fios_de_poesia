@@ -20,7 +20,7 @@
         <form action="/user/register" method="POST" class="d-flex flex-column">
             <input class="mb-3 p-2 rounded" name="name" value="<%=body.name%>" placeholder="Nome">
             <input type="email" class="mb-3 p-2 rounded" name="email" value="<%=body.email%>" placeholder="Email">
-            <input class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Senha min 6 caracteres">
+            <input type="password" class="mb-3 p-2 rounded" name="password" value="<%=body.password%>" placeholder="Senha min 6 caracteres">
             <div class="d-flex">
                 <div>
                     <input type="checkbox" name="privicy" id="privicy" required>

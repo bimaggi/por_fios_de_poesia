@@ -185,6 +185,21 @@ footer img{
     width: 30%;
 }
 
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+   background:#d1a5da;        /* color of the tracking area */
+
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color:#f1e9f3;   /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #d1a5da;  /* creates padding around scroll thumb */
+
+
 @media(max-width:768px){
     .menu{
         flex-direction: column;

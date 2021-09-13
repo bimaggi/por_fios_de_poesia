@@ -13,7 +13,9 @@ const forgotPassword = async(req,res)=>{
     }
     const token = jwt.sign({
         email:req.body.email,
-    }, process.env.TOKEN_SECRET);
+    }, process.env.TOKEN_SECRET, {
+        expiresIn: 86400 // expires in 24h
+      });
 
     const email = {
         to: req.body.email,
@@ -26,7 +28,8 @@ const forgotPassword = async(req,res)=>{
     }
     await sendgrid.send(email)
     //return res.status(200).json({})
-    res.send('O link foi enviado para o seu email')
+   // res.send('O link foi enviado para o seu email')
+   res.render('messageEmailSend')
 }
 
 const showForgotPassword = (req,res)=>{
@@ -34,7 +37,7 @@ const showForgotPassword = (req,res)=>{
 }
 
 const showResetPassword =(req,res)=>{
-    res.render('resetPassword',{
+        res.render('resetPassword',{
         body:{},
     })
 }
@@ -43,7 +46,7 @@ const resetPassword = async(req,res)=>{
     let user = {}
     user.password = bcrypt.hashSync(req.body.password)
     let token = req.params.token
-    
+       
     if (!token){
         token = req.body.token
     }
@@ -57,6 +60,6 @@ const resetPassword = async(req,res)=>{
     //        password:bcrypt.hashSync(req.body.password)
     //    })
     //
-    return res.redirect('/user/login')
+    return res.render('messagePasswordReset')
 }
 module.exports = {forgotPassword,showForgotPassword,resetPassword,showResetPassword}
