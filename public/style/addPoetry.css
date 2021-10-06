@@ -4,7 +4,7 @@
 .add{
     width: 50%;
 }
-.add p{
+.add p, span{
     font-size: small;
     padding: 0;
     margin-bottom: 0;
@@ -39,12 +39,11 @@ footer p{
         width: 90%;
         padding: 0;
     }
-    .add p{
-        font-size: x-small;
-    }
     .logo img{
         width:25% ;
-       
+    }
+    .add p , span{
+        font-size: x-small;
     }
     .logo h1{
         font-size: 1.3rem;

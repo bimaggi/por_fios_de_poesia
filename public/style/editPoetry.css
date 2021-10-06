@@ -21,8 +21,8 @@
     margin-top: 2%;
     margin-bottom: 5%;
 }
-p{
-    margin-bottom: 0.5%;
+p,span{
+    margin-bottom: 1%;
     font-size: small;
 }
 hr{
@@ -43,6 +43,9 @@ footer p{
     }
     .logo h1{
         font-size: 1.3rem;
+    }
+    p,span{
+        font-size: x-small;
     }
     
 }

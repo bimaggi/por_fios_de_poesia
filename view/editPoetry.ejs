@@ -23,7 +23,8 @@
             <input class="mb-3 p-2 rounded" name="author" value="<%=body.author%>" placeholder="Autor">
             <input class="mb-3 p-2 rounded" name="url" value="<%=body.url%>" placeholder="Url">
             <p>Mantenha a virgula ( , ) após cada palavra-chave</p>
-            <textarea class="mb-1 p-2 mt-0 rounded" rows="2" name="tags" value="<%=body.tags%>" placeholder="Tags"><%=body.tags%></textarea>
+            <span id='remaining'></span>
+            <textarea class="mb-1 p-2 mt-0 rounded" rows="2" name="tags"id="tags" value="<%=body.tags%>" placeholder="Tags"><%=body.tags%></textarea>
             <button class="btn mt-3 p-2 bg-purple text-white rounded">Editar</button>
         </form>
     </div>
@@ -32,4 +33,18 @@
     <hr>
     <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
 </footer>
+<script>
+     let tags= document.querySelector('#tags')
+    tags.addEventListener('keyup',charactersCount,false)
+    
+    function charactersCount(){
+        tags.disabled =false
+
+    if(tags.value.length > 200){
+        document.querySelector('#tags').disabled = true
+        return false;
+    } 
+ document.querySelector("#remaining").innerHTML=("Caracteres restante: " +(200 - this.value.length))
+};
+</script>
 </html>

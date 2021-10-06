@@ -21,7 +21,7 @@ header{
 
 }
 .logo img{
-    width:35% ;
+    width:35%;
 }
 .logo h1{
     font-size: x-large;
@@ -111,7 +111,7 @@ label{
 }
 .item{
     margin-top: 4%;
-    margin-bottom: 8%;
+    margin-bottom: 5%;
 }
 .aut{
     font-size: smaller;
@@ -120,6 +120,9 @@ label{
 .url a{
     font-size: .9rem;
     text-decoration: none;
+}
+.url{
+    margin-bottom: 10%;
 }
 .book{
     width: 14%;
@@ -131,7 +134,8 @@ label{
     width: 100%;
 }
 .books{
-    width: 100%;
+    /*width: 100%; alterar assim que inserir os outros livros*/
+    width: 60%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -141,16 +145,15 @@ label{
 }
 .books img{
     width: 50%;
+    /*width:50% alterar assim que inserir os outros livros*/
 }
 hr{
     margin-bottom: 0;
-
 }
 .contact{
     display: flex;
     justify-content: center;
     padding-bottom: 4%;
-    
 }
 .contact img{
     width: 15%;
@@ -184,20 +187,19 @@ footer li{
 footer img{
     width: 30%;
 }
-
 body::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */
-  }
+}
   
   body::-webkit-scrollbar-track {
    background:#d1a5da;        /* color of the tracking area */
-
-  }
+}
   
-  body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background-color:#f1e9f3;   /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid #d1a5da;  /* creates padding around scroll thumb */
+}
 
 
 @media(max-width:768px){
@@ -295,6 +297,10 @@ body::-webkit-scrollbar {
         margin-bottom: 5%;
         text-align: left;
     }
+    .url{
+        margin-bottom: 15%;
+
+    }
     .poetry p{
         font-size: small;
         margin: auto;
@@ -314,18 +320,19 @@ body::-webkit-scrollbar {
         padding: 0;
     }
     .books img{
-        width: 65%;
-    }
+        width: 70%;
+    } 
     .img1{
-        width: 65%;
+        width: 100%;
         align-self: flex-start;
         padding: 0;
     }
-    .img2{
+    
+    /*.img2{
         width: 65%;
         align-self: flex-end;
         padding: 0;
-    }
+    }alterar assim que inserir os outros livros*/
     .contact{
         margin-top: 8%;
         flex-wrap: wrap;
