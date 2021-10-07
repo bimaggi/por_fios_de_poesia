@@ -42,8 +42,10 @@
         };
         //console.log('esse é o options',options)
 
-        //fetch(`${process.env.BASE_URL}/user/login`, options).then((http) => {  
-        fetch('http://localhost:3000/user/login', options).then((http) => {        
+        const BASE_URL = window.location.origin
+
+        fetch(`${BASE_URL}/user/login`, options).then((http) => {  
+        //fetch('http://localhost:3000/user/login', options).then((http) => {        
             const new_token = http.headers.get("authorization-token");          
             // Aqui eu vejo o valor do headers passado pelo back          
             //console.log("esse é o new token",new_token);          
@@ -52,7 +54,8 @@
             // Essa rota que eu mando, pode ser uma casca vazia, que vai fazer outro fetch com o localstorage,
             // que mostre na tela os dados necessários ou uma mensagem de acesso proibido :)     
             if(new_token){
-                window.location.replace("http://localhost:3000/admin/allPoetry")              
+                //window.location.replace("http://localhost:3000/admin/allPoetry")      
+                window.location.replace(`${BASE_URL}/admin/allPoetry`)        
             }else{
                 alert('Email ou senha inválidos!')
             }  
