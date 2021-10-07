@@ -1,5 +1,5 @@
 body{
-    background-image:url('/fundo.jpg');background-repeat: no-repeat;background-size: cover; ;
+    background-image:url('../images/fundo.jpg');background-repeat: no-repeat;background-size: cover; ;
 }
 header{
     background-color: white;
@@ -190,15 +190,13 @@ footer img{
 body::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */
 }
-  
-  body::-webkit-scrollbar-track {
-   background:#d1a5da;        /* color of the tracking area */
+body::-webkit-scrollbar-track {
+   background:#f1e9f3;        /* color of the tracking area */
 }
-  
 body::-webkit-scrollbar-thumb {
-    background-color:#f1e9f3;   /* color of the scroll thumb */
+    background-color: #d1a5da; /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid #d1a5da;  /* creates padding around scroll thumb */
+    border: 2px solid #f0ecf1 ; /* creates padding around scroll thumb */
 }
 
 
@@ -368,6 +366,7 @@ body::-webkit-scrollbar-thumb {
     .image img{
         width: 100%;
     }
+    
 }
 
 
