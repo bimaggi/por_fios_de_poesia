@@ -1,6 +1,19 @@
 .w-new{
     width: 80%;
 }
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+    background:#6d5c81;        /* color of the tracking area */
+ }
+   
+ body::-webkit-scrollbar-thumb {
+     background-color:black;   /* color of the scroll thumb */
+     border-radius: 20px;       /* roundness of the scroll thumb */
+     border: .5px solid #d1a5da;  /* creates padding around scroll thumb */
+ }
 @media(max-width:768px){
     .w-new{
         width: 90%;
