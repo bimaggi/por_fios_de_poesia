@@ -16,14 +16,11 @@ const validateCookie = require('./controller/validateCookie')
 const cookieParser = require('cookie-parser')
 
 const mongoose = require('mongoose');
-const { MONGO_URL } = require('./controller/dbConnect');
     mongoose.connect(dbConnect.MONGO_URL,
         {
             useNewUrlParser: true, 
             useUnifiedTopology: true
         });
-    
-
 const db = mongoose.connection;
 db.on('error',()=>{console.log('Houve um erro')});
 db.once('open',()=>{ console.log('conectado com sucesso')});
