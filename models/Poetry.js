@@ -7,7 +7,7 @@ const PoetrySchema = new mongoose.Schema({
     text: {type:String, required:true},
     author: {type:String, required:true},
     url: {type:String},
-    tags: [{ type: String, maxlength: 3}],
+    tags: [{ type: String, maxlength: 200}],
     createdAt:{type:Date, default: Date.now()},
     post_by:{type: String, required: true},
 })
