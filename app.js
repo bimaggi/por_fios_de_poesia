@@ -34,7 +34,7 @@ app.use(cookieParser())
 app.use('/',homePageRouter);
 app.use('/user',userRouter);
 app.use('/privicyPolicy',privicyRouter);
-app.use('/admin',validateCookie,poetryRouter);
 app.use('/termOfUse',termOfUseRouter);
+app.use('/admin',validateCookie,poetryRouter);
 app.use('/resetPassword', resetPasswordRouter);
 app.listen(process.env.PORT,()=>{ console.log('Server Running')});

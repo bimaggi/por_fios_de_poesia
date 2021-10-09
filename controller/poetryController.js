@@ -6,7 +6,6 @@ const showAdd = (req,res)=>{
         body:{}
     })
 };
-
 const addPoetry = async(req, res)=>{
     let poetry = new Poetry({
         title: req.body.title,
@@ -16,10 +15,10 @@ const addPoetry = async(req, res)=>{
         url: req.body.url,
         post_by: req.user.email,
     })
-   
     try{
         let doc = await poetry.save()
-            res.redirect('/admin/allPoetry')
+        res.redirect('/admin/allPoetry')
+
     }catch(error){
        res.send(error)
     }
