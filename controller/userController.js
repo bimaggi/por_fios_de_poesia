@@ -26,7 +26,8 @@ const register = async(req,res)=>{
     })
     try{
         let savedUser = await user.save()
-        res.redirect('/user/login')
+        //res.redirect('/user/login')
+        res.redirect(`${BASE_URL}/user/login`)
     }catch(error){
         res.status(400).send(error) 
     }
