@@ -199,7 +199,6 @@ body::-webkit-scrollbar-thumb {
     border: 2px solid #f0ecf1 ; /* creates padding around scroll thumb */
 }
 
-
 @media(max-width:768px){
     .menu{
         flex-direction: column;
