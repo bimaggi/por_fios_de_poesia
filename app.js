@@ -26,7 +26,7 @@ const { MONGO_URL } = require('./controller/dbConnect');
 
 const db = mongoose.connection;
 db.on('error',()=>{console.log('Houve um erro')});
-db.once('open',()=>{ console.log('conectado com sucesso na lab',dbConnect.MONGO_URL)});
+db.once('open',()=>{ console.log('conectado com sucesso')});
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'view'));
