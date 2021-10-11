@@ -25,7 +25,7 @@
             <p>Separe as palavras-chave com uma vírgula(,)</p>
             <span id='remaining'></span>
             <textarea class="mb-1 p-2 mt-0 rounded" rows="2" name="tags"id="tags" value="<%=body.tags%>" placeholder="Tags"><%=body.tags%></textarea>
-            <button class="btn mt-3 p-2 bg-purple text-white rounded">Editar</button>
+            <button Id="edit" class="btn mt-3 p-2 bg-purple text-white rounded">Editar</button>
         </form>
     </div>
 </body>
@@ -35,16 +35,19 @@
 </footer>
 <script>
      let tags= document.querySelector('#tags')
-    tags.addEventListener('keyup',charactersCount,false)
+    tags.addEventListener('input',charactersCount,false)
     
     function charactersCount(){
         tags.disabled =false
+        document.querySelector("#remaining").innerHTML=("Caracteres restante: " +(200 - this.value.length))
 
-    if(tags.value.length > 200){
-        document.querySelector('#tags').disabled = true
-        return false;
-    } 
- document.querySelector("#remaining").innerHTML=("Caracteres restante: " +(200 - this.value.length))
+        if(tags.value.length > 200){
+            document.querySelector('#edit').disabled = true
+            document.querySelector("#remaining").style.color = "red"
+            return false;
+        } 
+        document.querySelector('#add').disabled = false
+        document.querySelector("#remaining").style.color = "white"
 };
 </script>
 </html>

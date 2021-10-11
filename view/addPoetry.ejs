@@ -36,18 +36,19 @@
 </footer>
 <script>
     let tags= document.querySelector('#tags')
-    tags.addEventListener('keyup',charactersCount,false)
+    tags.addEventListener('input',charactersCount,false)
     
     function charactersCount(){
         tags.disabled =false
+        document.querySelector("#remaining").innerHTML=("Caracteres restante: " +(200 - this.value.length))
 
-    if(tags.value.length > 200){
-        document.querySelector('#tags').disabled = true
-        return false;
-    } 
- document.querySelector("#remaining").innerHTML=("Caracteres restante: " +(200 - this.value.length))
+        if(tags.value.length > 200){
+            document.querySelector('#add').disabled = true
+            document.querySelector("#remaining").style.color = "red"
+            return false;
+        }
+    document.querySelector('#add').disabled = false
+    document.querySelector("#remaining").style.color = "white"
 };
-
-
 </script>
 </html>
