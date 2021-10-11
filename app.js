@@ -10,13 +10,12 @@ const privicyRouter = require('./routes/privicyRouter')
 const poetryRouter = require('./routes/poetryRouter')
 const termOfUseRouter = require ('./routes/termOfUseRouter')
 const resetPasswordRouter = require('./routes/resetPasswordRouter') 
-const dbConnect = require ('./controller/dbConnect')
 
 const validateCookie = require('./controller/validateCookie')
 const cookieParser = require('cookie-parser')
 
 const mongoose = require('mongoose');
-    mongoose.connect(dbConnect.MONGO_URL,
+    mongoose.connect(process.env.MONGO_CONNECTION_URL,
         {
             useNewUrlParser: true, 
             useUnifiedTopology: true
