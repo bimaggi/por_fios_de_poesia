@@ -37,7 +37,7 @@ All the poetries that were posted will be available on the home page.</p>
                                                                                             
  ## Made with 
  * Node.js
- * Moongodb  
+ * Mongodb  
  * EJS
  
  ## Tools used
