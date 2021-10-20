@@ -35,20 +35,23 @@
     <p><a href="https://www.linkedin.com/in/marcia-bimaggi-marcia-beserra-de-oliveira-9303801b9/"class="text-decoration-none text-muted " target="_blank"><strong>Copyright&copy 2021; Created and powered by Marcia Bimaggi</strong></a></p> 
 </footer>
 <script>
-    let tags= document.querySelector('#tags')
+    const tags= document.querySelector('#tags')
     tags.addEventListener('input',charactersCount,false)
+    const MAXLENGTH = 200
+    const add = document.querySelector('#add')
+    const remaining = document.querySelector("#remaining")
     
     function charactersCount(){
-        tags.disabled =false
-        document.querySelector("#remaining").innerHTML=("Caracteres restante: " +(200 - this.value.length))
+       
+        remaining.innerHTML=("Caracteres restante: " +(MAXLENGTH - this.value.length))
 
-        if(tags.value.length > 200){
-            document.querySelector('#add').disabled = true
-            document.querySelector("#remaining").style.color = "red"
+        if(tags.value.length > MAXLENGTH){
+            add.disabled = true
+            remaining.style.color = "red"
             return false;
         }
-    document.querySelector('#add').disabled = false
-    document.querySelector("#remaining").style.color = "white"
-};
+        add.disabled = false
+        remaining.style.color = "white"
+    };
 </script>
 </html>
