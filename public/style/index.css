@@ -287,6 +287,9 @@ body::-webkit-scrollbar-thumb {
         margin-top: 5%;
         width: 30%;
     }
+    .author p{
+        font-size: .8rem;
+    }
     .author h2{
         font-size: larger;
     }
