@@ -82,10 +82,16 @@ label{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2%;
+}
+.author p{
+    padding: 0;
+    margin: 0;
 }
 .author h2{
     font-size: xX-large;
-    padding-bottom: 1%;
+    padding-bottom: 0%;
+    margin-bottom: 0;
    
 }
 .author img{
